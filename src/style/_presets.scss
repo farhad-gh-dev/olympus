@@ -6,9 +6,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Norse", Arial, Helvetica, sans-serif;
-}
-
-.custom-gradient {
-  background: $h1_gradient_color;
-  //   background: linear-gradient()
+  background-color: $body_bg_color;
+  color: $body_text_color;
 }
