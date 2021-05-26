@@ -1,0 +1,46 @@
+._position-fixed {
+  position: fixed !important;
+}
+
+._position-relative {
+  position: relative !important;
+}
+
+._position-absolute {
+  position: absolute !important;
+
+  &._from-top {
+    top: 0 !important;
+  }
+  &._from-bottom {
+    bottom: 0 !important;
+  }
+  &._from-left {
+    left: 0 !important;
+  }
+  &._from-right {
+    right: 0 !important;
+  }
+
+  &._to-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+._cover-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+._cover-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,55 @@
+.index-background {
+  height: 375px;
+  background-image: $bg_mobile_img;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -100;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      0deg,
+      rgba($body_bg_color, 1),
+      rgba($body_bg_color, 0)
+    );
+  }
+
+  @include md-size {
+    height: 100%;
+    background-image: $bg_desktop_img;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .front-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: 0.5s ease-in-out;
+
+    @include md-size {
+      transform: translateY(100px);
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: 1.1s ease-in-out;
+    }
+  }
+}

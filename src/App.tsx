@@ -1,7 +1,9 @@
+import IndexPage from "./Pages/IndexPage";
+
 function App() {
   return (
     <div className="App">
-      <h1>index page</h1>
+      <IndexPage />
     </div>
   );
 }

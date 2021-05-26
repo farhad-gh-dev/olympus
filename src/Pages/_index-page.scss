@@ -1,0 +1,23 @@
+.index-page {
+  width: 100vw;
+  height: 100vh;
+
+  .brand-logo {
+    top: 25px;
+    left: 25px;
+    // @include animate-opacity-translate(0, -60px, 0, 0.9s, ease-out, 0.3s);
+
+    @include md-size {
+      top: 50px;
+      left: 70px;
+    }
+
+    img {
+      width: 65px;
+
+      @include md-size {
+        width: 135px;
+      }
+    }
+  }
+}

@@ -1,6 +1,13 @@
 @import "./fonts";
 @import "./variables";
+@import "./breakpoints";
 @import "./display";
+@import "./position";
+@import "./animation";
 @import "./presets";
 
+//pages
+@import "../Pages/index-page";
+
 //components
+@import "../Components/IndexBackground/index-background";

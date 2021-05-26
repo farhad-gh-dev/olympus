@@ -1,0 +1,57 @@
+@mixin animate-opacity-translate(
+  $opacity: 0,
+  $x_start_point: 0,
+  $y_start_point: 0,
+  $duration: 0.5s,
+  $timing_function: ease-in-out,
+  $delay: 0s
+) {
+  opacity: $opacity;
+  transform: translate($x_start_point, $y_start_point);
+  animation: __opacity-1-translate-0__ $duration $timing_function forwards;
+  animation-delay: $delay;
+}
+
+@mixin animate-stroke-dashoffset(
+  $stroke_dasharray: 0,
+  $stroke_dashoffset: 0,
+  $duration: 0.5s,
+  $timing_function: ease-in-out,
+  $delay: 0s
+) {
+  stroke-dasharray: $stroke_dasharray;
+  stroke-dashoffset: $stroke_dashoffset;
+  animation: __stroke-dashoffset-0__ $duration $timing_function forwards;
+  animation-delay: $delay;
+}
+
+@mixin animate-header-element() {
+  opacity: 0;
+  transform: translate(70px, -90px) rotate(-65deg);
+  animation: __header-element__ 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes __opacity-1-translate-0__ {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes __stroke-dashoffset-0__ {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes __header-element__ {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-14deg);
+  }
+}

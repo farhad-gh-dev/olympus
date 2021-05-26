@@ -1,0 +1,36 @@
+//mobile-first breakpoints
+@mixin xs-size {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin sm-size {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin md-size {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg-size {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin xl-size {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xxl-size {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
