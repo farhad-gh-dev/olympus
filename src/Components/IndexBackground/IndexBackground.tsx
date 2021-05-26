@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-
-import HermesImage from "../../assets/index-page/hermes.png";
-import PoseidonImage from "../../assets/index-page/poseidon.png";
-import AresImage from "../../assets/index-page/ares.png";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Redux/Reducers/index";
 
 const IndexBackground: React.FC = () => {
-  const [activeImage, setActiveImage] = useState<number>(-1);
+  const backgroundImages = useSelector(
+    (store: RootState) => store.ThemeReducer.indexPageBackgroundImages
+  );
 
-  const backgroundImages = [
-    { src: HermesImage, alt: "hermes background" },
-    { src: PoseidonImage, alt: "poseidon background" },
-    { src: AresImage, alt: "ares background" },
-  ];
+  const [activeImage, setActiveImage] = useState<number>(-1);
 
   //to add transition effect to first render of the first backgroundImage
   useEffect(() => {
