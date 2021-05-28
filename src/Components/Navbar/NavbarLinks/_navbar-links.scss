@@ -1,0 +1,44 @@
+.navbar-links {
+  .navbar-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    letter-spacing: 0.15em;
+    opacity: 0.65;
+    transition: opacity 0.25s ease-in-out;
+
+    @include md-size {
+      margin-bottom: 70px;
+      padding: 30px;
+      letter-spacing: 0.45em;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .navbar-link {
+      font-size: 30px;
+      transition: 0.5s ease-in-out;
+
+      @include md-size {
+        font-size: 60px;
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      .navbar-link {
+        font-size: 45px;
+        color: #ccb37a;
+
+        @include md-size {
+          font-size: 90px;
+        }
+      }
+    }
+  }
+}

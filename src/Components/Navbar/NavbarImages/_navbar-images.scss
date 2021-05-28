@@ -1,0 +1,36 @@
+.navbar-images {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  @include md-size {
+    height: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(70px);
+    transition: 0.4s ease-in-out;
+
+    @include md-size {
+      width: auto;
+      max-height: 100%;
+      max-width: inherit;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+      transition: 0.7s ease-in-out;
+    }
+  }
+}

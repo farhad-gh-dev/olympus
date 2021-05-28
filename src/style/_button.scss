@@ -1,0 +1,21 @@
+@mixin basic-button {
+  font-family: $primary_font;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $body_bg_inverted_color;
+  }
+}
+._custom-button {
+  @include basic-button;
+}

@@ -3,6 +3,8 @@
 @import "./breakpoints";
 @import "./display";
 @import "./position";
+@import "./text";
+@import "./button";
 @import "./animation";
 @import "./presets";
 
@@ -11,3 +13,6 @@
 
 //components
 @import "../Components/IndexBackground/index-background";
+@import "../Components/Navbar/navbar";
+@import "../Components/Navbar/NavbarLinks/navbar-links";
+@import "../Components/Navbar/NavbarImages/navbar-images";
