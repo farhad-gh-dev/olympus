@@ -54,7 +54,10 @@ const Navbar: React.FC = () => {
           <div className="navbar-images-container">
             <NavbarImages navbarLinks={navbarLinks} activeImage={activeImage} />
           </div>
-          <div className="navbar-links-container _d-flex _align-items-center _justify-content-center">
+          <div
+            className="navbar-links-container _d-flex _align-items-center _justify-content-center"
+            data-testid={"navbar-links-container"}
+          >
             <NavbarLinks
               navbarLinks={navbarLinks}
               activeLink={activeLink}

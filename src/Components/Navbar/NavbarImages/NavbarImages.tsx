@@ -8,7 +8,7 @@ interface Props {
 
 const NavbarImages: React.FC<Props> = ({ navbarLinks, activeImage }) => {
   return (
-    <div className={`navbar-images _position-relative _text-right`}>
+    <div className="navbar-images _position-relative _text-right">
       {navbarLinks.map((link) => {
         return (
           <img

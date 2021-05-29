@@ -18,6 +18,7 @@ const NavbarLinks: React.FC<Props> = ({
     <ul
       className="navbar-links _text-center"
       onMouseLeave={mouseLeaveLinkHandler}
+      data-testid="navbar-links-ul"
     >
       {navbarLinks.map((link) => {
         return (
