@@ -12,6 +12,9 @@ const IndexPage: React.FC = () => {
         <img src={BrandLogo} alt="wiki olympus logo" />
       </a>
       <Navbar />
+      <div className="text-section">
+        <div className="section-title">gods of olympus</div>
+      </div>
     </div>
   );
 };

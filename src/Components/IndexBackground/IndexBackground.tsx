@@ -30,7 +30,7 @@ const IndexBackground: React.FC = () => {
   }, [backgroundImages.length, activeImage]);
 
   return (
-    <div className="index-background _cover-parent">
+    <div className="index-background">
       {backgroundImages.map((bgImage, index) => {
         return (
           <img
