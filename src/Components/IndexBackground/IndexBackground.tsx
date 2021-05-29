@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Reducers/index";
 
@@ -35,7 +34,7 @@ const IndexBackground: React.FC = () => {
       {backgroundImages.map((bgImage, index) => {
         return (
           <img
-            key={uuid()}
+            key={bgImage.alt}
             src={bgImage.src}
             alt={bgImage.alt}
             className={`front-layer${index === activeImage ? " active" : ""}`}

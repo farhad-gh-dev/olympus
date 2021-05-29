@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 as uuid } from "uuid";
 import type { Link } from "../_NavbarTypes";
 
 interface Props {
@@ -13,7 +12,7 @@ const NavbarImages: React.FC<Props> = ({ navbarLinks, activeImage }) => {
       {navbarLinks.map((link) => {
         return (
           <img
-            key={uuid()}
+            key={link.imageAlt}
             src={link.linkImage}
             alt={link.imageAlt}
             className={`${link.title === activeImage ? "active" : ""}`}
