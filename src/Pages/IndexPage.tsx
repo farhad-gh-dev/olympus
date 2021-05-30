@@ -3,6 +3,7 @@ import React from "react";
 import IndexBackground from "../Components/IndexBackground/IndexBackground";
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
+import Quotes from "../Components/Quotes/Quotes";
 
 const IndexPage: React.FC = () => {
   return (
@@ -12,8 +13,9 @@ const IndexPage: React.FC = () => {
         <img src={BrandLogo} alt="wiki olympus logo" />
       </a>
       <Navbar />
-      <div className="text-section">
-        <div className="section-title">gods of olympus</div>
+      <div className="text-area">
+        <h1 className="main-title">gods of olympus</h1>
+        <Quotes />
       </div>
     </div>
   );

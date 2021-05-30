@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useSlideTimer from "../../Hooks/useSlideTimer";
 import { RootState } from "../../Redux/Reducers/index";
 
 const IndexBackground: React.FC = () => {
@@ -7,27 +8,10 @@ const IndexBackground: React.FC = () => {
     (store: RootState) => store.ThemeReducer.indexPageBackgroundImages
   );
 
-  const [activeImage, setActiveImage] = useState<number>(-1);
-
-  //to add transition effect to first render of the first backgroundImage
-  useEffect(() => {
-    setActiveImage(0);
-  }, []);
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      if (activeImage === backgroundImages.length - 1) {
-        setActiveImage(0);
-        return;
-      }
-
-      setActiveImage(activeImage + 1);
-    }, 6000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [backgroundImages.length, activeImage]);
+  const { activeTargetIndex: activeImageIndex } = useSlideTimer(
+    backgroundImages.length,
+    6000
+  );
 
   return (
     <div className="index-background">
@@ -37,7 +21,9 @@ const IndexBackground: React.FC = () => {
             key={bgImage.alt}
             src={bgImage.src}
             alt={bgImage.alt}
-            className={`front-layer${index === activeImage ? " active" : ""}`}
+            className={`front-layer${
+              index === activeImageIndex ? " active" : ""
+            }`}
           />
         );
       })}

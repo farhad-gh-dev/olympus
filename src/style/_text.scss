@@ -1,3 +1,13 @@
+h1 {
+  font-size: 30px;
+  letter-spacing: 0.15em;
+  font-weight: normal;
+
+  @include md-size {
+    font-size: 70px;
+  }
+}
+
 ._text-cap {
   text-transform: capitalize !important;
 }
