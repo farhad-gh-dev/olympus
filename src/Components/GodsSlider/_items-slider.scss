@@ -1,0 +1,140 @@
+.items-slider {
+  position: relative;
+  width: 100%;
+  padding: 15px 25px 70px;
+
+  @include md-size {
+    position: absolute;
+    bottom: 10vh;
+    left: 75px;
+    width: 770px;
+    padding: 0;
+  }
+
+  .slider-control-button {
+    font-size: 30px;
+
+    @include md-size {
+      font-size: 50px;
+    }
+
+    &.prev-button {
+      margin-right: 20px;
+
+      @include md-size {
+        margin-right: 70px;
+      }
+    }
+
+    &.next-button {
+      margin-left: 20px;
+
+      @include md-size {
+        margin-left: 70px;
+      }
+    }
+  }
+
+  .slider-container {
+    display: flex;
+    flex-grow: 1;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @include md-size {
+      font-size: 50px;
+      padding: 30px 0;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: 0.5s ease-in-out;
+    }
+
+    .slider-item {
+      position: relative;
+      padding: 0 20px;
+
+      @include md-size {
+        padding: 0 50px;
+      }
+
+      a {
+        display: inline-block;
+        transform: translateY(0);
+        color: transparent;
+        transition: 0.5s ease-in-out;
+        pointer-events: none;
+      }
+
+      .slider-select-mark {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 15px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+
+        img {
+          width: 42px;
+          height: auto;
+
+          @include md-size {
+            width: 98px;
+          }
+        }
+      }
+
+      &.active {
+        a {
+          transform: translateY(-13px);
+          font-weight: bold;
+          color: #ffffff;
+
+          @include md-size {
+            transform: translateY(-27px);
+          }
+
+          pointer-events: unset;
+        }
+
+        .slider-select-mark {
+          transform: translate(-50%, 0);
+          opacity: 1;
+          visibility: visible;
+          transition: 0.6s ease-in-out;
+        }
+      }
+
+      &.left-slide {
+        a {
+          background: linear-gradient(
+            -90deg,
+            rgba(255, 255, 255, 0.8),
+            rgba(0, 0, 0, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &.right-slide {
+        a {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.8),
+            rgba(0, 0, 0, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}

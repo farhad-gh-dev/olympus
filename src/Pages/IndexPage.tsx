@@ -4,6 +4,7 @@ import IndexBackground from "../Components/IndexBackground/IndexBackground";
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
 import Quotes from "../Components/Quotes/Quotes";
+import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
 
 const IndexPage: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const IndexPage: React.FC = () => {
         <h1 className="main-title">gods of olympus</h1>
         <Quotes />
       </div>
+      <ItemsSlider />
     </div>
   );
 };

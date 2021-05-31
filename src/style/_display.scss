@@ -13,12 +13,16 @@
     justify-content: center !important;
   }
 
+  &._justify-space-between {
+    justify-content: space-between !important;
+  }
+
   &._align-items-center {
     align-items: center !important;
   }
 
-  &._justify-space-between {
-    justify-content: space-between !important;
+  &._align-items-end {
+    align-items: flex-end !important;
   }
 
   &._flex-column {
