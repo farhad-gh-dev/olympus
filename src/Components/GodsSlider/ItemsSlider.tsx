@@ -1,11 +1,17 @@
 import React from "react";
+import { SliderItem } from "./_ItemsSliderTypes";
+
 import ArrowIcon from "../../assets/index-page/slider-select-mark.svg";
 import useItemsSlider from "./useItemsSlider";
 import useSliderOffset from "./useSliderOffset";
 
-const GodsSlider: React.FC = () => {
+interface Props {
+  sliderData: SliderItem[];
+}
+
+const GodsSlider: React.FC<Props> = ({ sliderData }) => {
   const { sliderItems, targetSlideIndex, nextSlideHandler, prevSlideHandler } =
-    useItemsSlider();
+    useItemsSlider(sliderData);
 
   const { offset } = useSliderOffset(sliderItems, targetSlideIndex);
 
@@ -30,23 +36,23 @@ const GodsSlider: React.FC = () => {
             ? sliderItems.map((item) => {
                 return (
                   <div
-                    key={item.title}
-                    id={item.title}
+                    key={item.name}
+                    id={item.name}
                     className={`slider-item${
                       //for active middle item
-                      item.title === sliderItems[targetSlideIndex].title
+                      item.name === sliderItems[targetSlideIndex].name
                         ? " active"
                         : ""
                     }${
                       //for left side item
                       sliderItems[targetSlideIndex - 1] !== undefined &&
-                      item.title === sliderItems[targetSlideIndex - 1].title
+                      item.name === sliderItems[targetSlideIndex - 1].name
                         ? " left-slide"
                         : ""
                     }${
                       //for right side item
                       sliderItems[targetSlideIndex + 1] !== undefined &&
-                      item.title === sliderItems[targetSlideIndex + 1].title
+                      item.name === sliderItems[targetSlideIndex + 1].name
                         ? " right-slide"
                         : ""
                     }`}
@@ -54,7 +60,7 @@ const GodsSlider: React.FC = () => {
                     <div className="slider-select-mark">
                       <img src={ArrowIcon} alt="arrow" />
                     </div>
-                    <a href="/">{item.title}</a>
+                    <a href={`/${item.name}`}>{item.name}</a>
                   </div>
                 );
               })

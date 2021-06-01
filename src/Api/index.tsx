@@ -5,4 +5,9 @@ const fetchQuotes = async () => {
   return data;
 };
 
-export { fetchQuotes };
+const fetchGodsList = async () => {
+  const { data } = await axios.get("http://192.168.1.6:8000/olympus/gods");
+  return data;
+};
+
+export { fetchQuotes, fetchGodsList };

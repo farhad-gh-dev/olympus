@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { SliderItem } from "./_ItemsSliderTypes";
 
-const useItemsSlider = () => {
+const useItemsSlider = (sliderData: SliderItem[]) => {
   const [sliderItems, setSliderItems] = useState<SliderItem[]>([]);
   const [targetSlideIndex, setTargetSlideIndex] = useState(0);
 
@@ -18,17 +18,9 @@ const useItemsSlider = () => {
   };
 
   useEffect(() => {
-    const sliderData = [
-      { title: "hermes", href: "/hermes" },
-      { title: "athena", href: "/athena" },
-      { title: "zeus", href: "/zeus" },
-      { title: "ares", href: "/ares" },
-      { title: "poseidon", href: "/poseidon" },
-    ];
-
     setSliderItems(sliderData);
     setTargetSlideIndex(Math.round((sliderData.length - 1) / 2));
-  }, []);
+  }, [sliderData]);
 
   return {
     sliderItems,

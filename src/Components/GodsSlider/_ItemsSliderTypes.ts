@@ -1,6 +1,6 @@
 interface SliderItem {
-  title: string;
-  href: string;
+  name: string;
+  id?: string;
 }
 
 export type { SliderItem };

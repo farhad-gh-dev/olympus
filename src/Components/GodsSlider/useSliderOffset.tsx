@@ -17,7 +17,7 @@ const useSliderOffset = (
         //calc elements width before active item (no need for first item)
         if (targetSlideIndex !== 0) {
           sliderItems.forEach((item, index) => {
-            const currentElement = document.getElementById(item.title);
+            const currentElement = document.getElementById(item.name);
             if (currentElement !== null && index < targetSlideIndex) {
               offsetSum += currentElement.clientWidth;
             }
@@ -26,7 +26,7 @@ const useSliderOffset = (
 
         //get width of the active item in slider
         const targetElementWidth = document.getElementById(
-          sliderItems[targetSlideIndex].title
+          sliderItems[targetSlideIndex].name
         )?.clientWidth;
 
         const sliderWidth =
