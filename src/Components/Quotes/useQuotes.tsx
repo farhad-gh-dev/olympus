@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchQuotes } from "../../Api/index";
-
-interface Quotes {
-  quote: string;
-  quotee: string;
-}
+import type { Quote } from "./_QuotesTypes";
 
 const useQuotes = () => {
-  const [quotesArray, setQuotesArray] = useState<Quotes[]>([]);
+  const [quotesArray, setQuotesArray] = useState<Quote[]>([]);
 
   useEffect(() => {
     const getQuotes = async () => {

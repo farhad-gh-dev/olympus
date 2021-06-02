@@ -20,6 +20,10 @@
     visibility: hidden;
     transition: 0s linear;
 
+    &.placeholder-quote {
+      filter: blur(3px);
+    }
+
     .quote {
       margin: 0 0 15px;
       opacity: 0;

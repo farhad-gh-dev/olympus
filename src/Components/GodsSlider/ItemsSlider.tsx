@@ -6,12 +6,12 @@ import useItemsSlider from "./useItemsSlider";
 import useSliderOffset from "./useSliderOffset";
 
 interface Props {
-  sliderData: SliderItem[];
+  sliderArr: SliderItem[];
 }
 
-const GodsSlider: React.FC<Props> = ({ sliderData }) => {
+const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
   const { sliderItems, targetSlideIndex, nextSlideHandler, prevSlideHandler } =
-    useItemsSlider(sliderData);
+    useItemsSlider(sliderArr);
 
   const { offset } = useSliderOffset(sliderItems, targetSlideIndex);
 
