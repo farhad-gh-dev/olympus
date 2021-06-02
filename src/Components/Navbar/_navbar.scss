@@ -35,7 +35,8 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       .spear-image {
         transform: translate(-8px, -14px);
 
@@ -76,6 +77,10 @@
       @include md-size {
         top: 40px;
         left: 70px;
+      }
+
+      &:focus-visible {
+        color: $index_page_accent_color;
       }
 
       div {

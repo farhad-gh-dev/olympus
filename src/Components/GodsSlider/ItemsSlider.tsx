@@ -61,7 +61,16 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
                     <div className="slider-select-mark">
                       <img src={ArrowIcon} alt="arrow" />
                     </div>
-                    <a href={`/${item.name}`}>{item.name}</a>
+                    <a
+                      href={`/${item.name}`}
+                      tabIndex={
+                        item.name === sliderItems[targetSlideIndex].name
+                          ? 0
+                          : -1
+                      }
+                    >
+                      {item.name}
+                    </a>
                   </div>
                 );
               })

@@ -19,6 +19,13 @@
       font-size: 50px;
     }
 
+    &.prev-button,
+    &.next-button {
+      &:focus-visible {
+        color: $index_page_accent_color;
+      }
+    }
+
     &.prev-button {
       margin-right: 20px;
 
@@ -44,7 +51,7 @@
     padding: 15px 0;
     overflow: hidden;
     white-space: nowrap;
-    justify-content: center;
+    // justify-content: center;
 
     @include md-size {
       font-size: 50px;
@@ -96,6 +103,10 @@
           transform: translateY(-13px);
           font-weight: bold;
           color: #ffffff;
+
+          &:focus-visible {
+            color: lighten($index_page_accent_color, 10);
+          }
 
           @include md-size {
             transform: translateY(-27px);
