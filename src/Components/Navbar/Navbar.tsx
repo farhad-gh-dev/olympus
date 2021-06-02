@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/Reducers/index";
+import { Link } from "./_NavbarTypes";
 import useNavbar from "./useNavbar";
 import NavbarLinks from "./NavbarLinks/NavbarLinks";
 import NavbarImages from "./NavbarImages/NavbarImages";
@@ -8,11 +7,11 @@ import NavbarImages from "./NavbarImages/NavbarImages";
 import ShieldImage from "../../assets/shield.png";
 import SpearImage from "../../assets/spear.png";
 
-const Navbar: React.FC = () => {
-  const navbarLinks = useSelector(
-    (store: RootState) => store.ThemeReducer.navbarLinks
-  );
+interface Props {
+  links: Link[];
+}
 
+const Navbar: React.FC<Props> = ({ links }) => {
   const {
     isActive,
     activeLink,
@@ -21,7 +20,7 @@ const Navbar: React.FC = () => {
     navbarCloseHandler,
     mouseEnterLinkHandler,
     mouseLeaveLinkHandler,
-  } = useNavbar(navbarLinks);
+  } = useNavbar(links);
 
   return (
     <nav className="navbar">
@@ -52,14 +51,14 @@ const Navbar: React.FC = () => {
         </button>
         <div className="navbar-items-container">
           <div className="navbar-images-container">
-            <NavbarImages navbarLinks={navbarLinks} activeImage={activeImage} />
+            <NavbarImages navbarLinks={links} activeImage={activeImage} />
           </div>
           <div
             className="navbar-links-container _d-flex _align-items-center _justify-content-center"
             data-testid={"navbar-links-container"}
           >
             <NavbarLinks
-              navbarLinks={navbarLinks}
+              navbarLinks={links}
               activeLink={activeLink}
               mouseEnterLinkHandler={mouseEnterLinkHandler}
               mouseLeaveLinkHandler={mouseLeaveLinkHandler}

@@ -10,6 +10,7 @@ import Quotes from "../Components/Quotes/Quotes";
 import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
 
 const IndexPage: React.FC = () => {
+  const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
   const { godsList, quotes } = useSelector(
     (store: RootState) => store.DataReducer
   );
@@ -27,7 +28,7 @@ const IndexPage: React.FC = () => {
       <a href="/" className="brand-logo _position-absolute">
         <img src={BrandLogo} alt="wiki olympus logo" />
       </a>
-      <Navbar />
+      <Navbar links={navbarLinks} />
       <div className="text-area">
         <h1 className="main-title">gods of olympus</h1>
         <Quotes quotesArr={quotes} />

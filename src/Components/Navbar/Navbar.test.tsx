@@ -1,17 +1,25 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import rootReducer from "../../Redux/Reducers/index";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import Navbar from "./Navbar";
 
+const DummyData = [
+  { url: "/", title: "home", linkImage: "", imageAlt: "olympus" },
+  {
+    url: "/about",
+    title: "about",
+    linkImage: "",
+    imageAlt: "statues",
+  },
+  {
+    url: "/credits",
+    title: "credits",
+    linkImage: "",
+    imageAlt: "scroll",
+  },
+];
+
 beforeEach(() => {
-  const store = createStore(rootReducer);
-  render(
-    <Provider store={store}>
-      <Navbar />
-    </Provider>
-  );
+  render(<Navbar links={DummyData} />);
 });
 
 describe("navbar links", () => {

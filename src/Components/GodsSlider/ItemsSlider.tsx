@@ -20,6 +20,7 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
       <button
         className="slider-control-button prev-button _custom-button"
         onClick={prevSlideHandler}
+        data-testid="prev-button"
       >
         {"<"}
       </button>
@@ -70,6 +71,7 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
       <button
         className="slider-control-button next-button _custom-button"
         onClick={nextSlideHandler}
+        data-testid="next-button"
       >
         {">"}
       </button>
