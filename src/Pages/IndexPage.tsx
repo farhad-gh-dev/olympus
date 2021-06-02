@@ -17,7 +17,7 @@ const IndexPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(godsListHandler());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="index-page _position-relative">
