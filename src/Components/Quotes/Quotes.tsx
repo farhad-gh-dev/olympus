@@ -21,7 +21,7 @@ const Quotes: React.FC<Props> = ({ quotesArr }) => {
               className={`quote-container${
                 index === activeQuoteIndex ? " active" : ""
               }`}
-              key={q !== undefined ? q.quotee : ""}
+              key={q.quotee}
             >
               <div className="quote">
                 <span>“</span>
