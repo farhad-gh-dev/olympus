@@ -23,7 +23,7 @@
     );
   }
 
-  @include md-size {
+  @include sm-size {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,15 +32,21 @@
     background-image: $bg_desktop_img;
 
     &::after {
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @include lg-size {
+    &::after {
       display: none;
     }
   }
 
   .front-layer {
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
-    width: auto;
     height: 100%;
     width: auto;
     opacity: 0;
@@ -48,8 +54,15 @@
     transform: translateY(50px);
     transition: 0.5s ease-in-out;
 
-    @include md-size {
+    @include sm-size {
       transform: translateY(100px);
+      height: auto;
+      width: 100%;
+    }
+
+    @include lg-size {
+      height: 100%;
+      width: auto;
     }
 
     &.active {

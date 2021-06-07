@@ -28,9 +28,7 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
         <div
           className="slider-wrapper"
           style={{
-            transform: `translateX(${
-              targetSlideIndex > 0 ? "-" : ""
-            }${offset}px)`,
+            transform: `translateX(${offset}px)`,
           }}
         >
           {sliderItems.length !== 0

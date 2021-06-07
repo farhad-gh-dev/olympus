@@ -13,6 +13,7 @@ export const setQuotes = () => async (dispatch: any) => {
 
 export const setGodsList = () => async (dispatch: any) => {
   const data = await fetchGodsList();
+
   dispatch({
     type: SET_GODS_LIST,
     payload: data,

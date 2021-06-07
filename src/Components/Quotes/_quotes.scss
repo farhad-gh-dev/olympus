@@ -1,13 +1,23 @@
+$quote_font_size_mobile: 17px;
+$quote_font_size_tablet: 24px;
+$quote_font_size_desktop: 30px;
+
 .quotes {
-  font-size: $quote_font_size_mobile;
+  font-size: 17px;
   width: 100%;
   letter-spacing: 0.15em;
   line-height: 30px;
   height: 190px;
 
-  @include md-size {
-    font-size: $quote_font_size_desktop;
-    max-width: 770px;
+  @include sm-size {
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    line-height: 45px;
+    height: auto;
+  }
+
+  @include lg-size {
+    font-size: 30px;
     letter-spacing: 0.15em;
     line-height: 45px;
     height: auto;
@@ -45,12 +55,17 @@
     }
 
     .quotee {
-      font-size: 18px;
+      font-size: 17px;
       opacity: 0;
       transform: translateY(30px);
       transition: 0.8s ease-in-out;
 
-      @include md-size {
+      @include sm-size {
+        font-size: 24px;
+        transform: translateY(40px);
+      }
+
+      @include lg-size {
         font-size: 30px;
         transform: translateY(50px);
       }

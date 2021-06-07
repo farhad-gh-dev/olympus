@@ -1,12 +1,17 @@
 .navbar {
   .navbar-button {
     top: 20px;
-    right: 20px;
+    right: $sides_spacing_mobile - 5px;
     z-index: 100;
 
-    @include md-size {
+    @include sm-size {
+      top: 30px;
+      right: $sides_spacing_tablet;
+    }
+
+    @include lg-size {
       top: 50px;
-      right: 50px;
+      right: $sides_spacing_desktop - 25px;
     }
 
     .shield-image {
@@ -15,7 +20,7 @@
       z-index: 50;
       animation: shield-glowing-mobile 2.5s ease-in-out infinite;
 
-      @include md-size {
+      @include sm-size {
         width: 100px;
         animation: shield-glowing-desktop 2.5s ease-in-out infinite;
       }
@@ -28,7 +33,7 @@
       z-index: 10;
       transition: 0.25s ease-in-out;
 
-      @include md-size {
+      @include sm-size {
         width: 58px;
         top: 9px;
         left: 7px;
@@ -40,7 +45,7 @@
       .spear-image {
         transform: translate(-8px, -14px);
 
-        @include md-size {
+        @include sm-size {
           transform: translate(-16px, -23px);
         }
       }

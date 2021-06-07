@@ -37,9 +37,7 @@ const useSliderOffset = (
           sideOffset = (sliderWidth - targetElementWidth) / 2;
         }
 
-        targetSlideIndex !== 0 //to prevent negative value
-          ? setOffset(offsetSum - sideOffset)
-          : setOffset(sideOffset);
+        setOffset(-(offsetSum - sideOffset));
       }, 0);
 
       return () => {

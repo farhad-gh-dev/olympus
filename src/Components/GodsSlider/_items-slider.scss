@@ -1,21 +1,14 @@
 .items-slider {
-  position: relative;
-  width: 100%;
   padding: 15px 25px 70px;
 
-  @include md-size {
-    position: absolute;
-    bottom: 10vh;
-    left: 75px;
-    width: calc(100% - 150px);
-    max-width: 770px;
+  @include sm-size {
     padding: 0;
   }
 
   .slider-control-button {
     font-size: 30px;
 
-    @include md-size {
+    @include sm-size {
       font-size: 50px;
     }
 
@@ -53,9 +46,14 @@
     white-space: nowrap;
     // justify-content: center;
 
-    @include md-size {
-      font-size: 50px;
+    @include sm-size {
+      font-size: 35px;
       padding: 30px 0;
+    }
+
+    @include lg-size {
+      font-size: 50px;
+      padding: 23px 0;
     }
 
     .slider-wrapper {
@@ -67,7 +65,11 @@
       position: relative;
       padding: 0 20px;
 
-      @include md-size {
+      @include sm-size {
+        padding: 0 35px;
+      }
+
+      @include lg-size {
         padding: 0 50px;
       }
 
@@ -92,7 +94,11 @@
           width: 42px;
           height: auto;
 
-          @include md-size {
+          @include sm-size {
+            width: 70px;
+          }
+
+          @include lg-size {
             width: 98px;
           }
         }
@@ -103,16 +109,19 @@
           transform: translateY(-13px);
           font-weight: bold;
           color: #ffffff;
+          pointer-events: unset;
 
-          &:focus-visible {
-            color: lighten($index_page_accent_color, 10);
+          @include sm-size {
+            transform: translateY(-20px);
           }
 
           @include md-size {
             transform: translateY(-27px);
           }
 
-          pointer-events: unset;
+          &:focus-visible {
+            color: lighten($index_page_accent_color, 10);
+          }
         }
 
         .slider-select-mark {

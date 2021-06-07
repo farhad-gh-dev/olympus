@@ -4,7 +4,7 @@
 
   .brand-logo {
     top: 25px;
-    left: 25px;
+    left: $sides_spacing_mobile - 5px;
     // @include animate-opacity-translate(0, -60px, 0, 0.9s, ease-out, 0.3s);
 
     &:focus-visible {
@@ -13,15 +13,24 @@
       }
     }
 
-    @include md-size {
+    @include sm-size {
+      top: 35px;
+      left: $sides_spacing_tablet;
+    }
+
+    @include lg-size {
       top: 50px;
-      left: 70px;
+      left: $sides_spacing_desktop - 5px;
     }
 
     img {
       width: 65px;
 
-      @include md-size {
+      @include sm-size {
+        width: 100px;
+      }
+
+      @include lg-size {
         width: 135px;
       }
     }
@@ -29,14 +38,22 @@
 
   .text-area {
     position: relative;
-    padding: 40px 30px 0;
+    padding: 40px $sides_spacing_mobile 0;
 
-    @include md-size {
+    @include sm-size {
       position: absolute;
       top: 50%;
-      left: 75px;
-      padding: 0;
+      left: $sides_spacing_tablet;
+      max-width: $quote_width_tablet + $sides_spacing_tablet;
+      padding: 0 $sides_spacing_tablet 0 0;
       transform: translateY(-50%);
+    }
+
+    @include lg-size {
+      top: 50%;
+      left: $sides_spacing_desktop;
+      max-width: $quote_width_desktop + $sides_spacing_desktop;
+      padding-right: $sides_spacing_desktop;
     }
 
     .main-title {
@@ -45,9 +62,27 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      @include md-size {
+      @include lg-size {
         margin: 0 0 55px;
       }
+    }
+  }
+
+  .slider-section {
+    position: relative;
+    width: 100%;
+
+    @include sm-size {
+      position: absolute;
+      bottom: 10vh;
+      left: $sides_spacing_tablet;
+      width: calc(100% - 90px);
+      max-width: $slider_width_tablet;
+    }
+
+    @include lg-size {
+      left: 75px;
+      max-width: $slider_width_desktop;
     }
   }
 }

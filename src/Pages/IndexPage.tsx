@@ -33,7 +33,9 @@ const IndexPage: React.FC = () => {
         <h1 className="main-title">gods of olympus</h1>
         <Quotes quotesArr={quotes} />
       </div>
-      <ItemsSlider sliderArr={godsList} />
+      <div className="slider-section">
+        <ItemsSlider sliderArr={godsList} />
+      </div>
     </div>
   );
 };
