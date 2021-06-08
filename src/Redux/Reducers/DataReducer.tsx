@@ -1,6 +1,7 @@
-import { SET_QUOTES, SET_GODS_LIST } from "../Actions/DataActions";
+import { SET_QUOTES, SET_GODS_LIST, SET_ERROR } from "../Actions/DataActions";
 
 const InitialState = {
+  error: false,
   quotes: [],
   godsList: [],
 };
@@ -16,6 +17,12 @@ const DataReducer = (state = InitialState, action: any) => {
       return {
         ...state,
         quotes: action.payload,
+      };
+
+    case SET_ERROR:
+      return {
+        ...state,
+        error: state.error !== action.payload ? action.payload : state.error,
       };
     default:
       return state;

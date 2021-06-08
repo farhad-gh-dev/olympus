@@ -8,8 +8,10 @@
 @import "./animation";
 @import "./presets";
 
-//pages
 @import "../Components/Loadings/page-loading";
+@import "../Components/Errors/general-error";
+
+//pages
 @import "../Pages/index-page";
 
 //components

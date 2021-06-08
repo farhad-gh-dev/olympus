@@ -8,9 +8,10 @@ import BrandLogo from "../assets/brand-logo.png";
 import Quotes from "../Components/Quotes/Quotes";
 import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
 import PageLoading from "../Components/Loadings/PageLoading";
+import GeneralError from "../Components/Errors/GeneralError";
 
 const IndexPage: React.FC = () => {
-  const { godsList, quotes } = useSelector(
+  const { error, godsList, quotes } = useSelector(
     (store: RootState) => store.DataReducer
   );
 
@@ -31,6 +32,7 @@ const IndexPage: React.FC = () => {
   return (
     <div className="index-page _position-relative">
       <PageLoading show={isLoading} />
+      <GeneralError show={error} delay={900} />
       <IndexBackground />
       <a href="/" className="brand-logo _position-absolute">
         <img src={BrandLogo} alt="wiki olympus logo" />

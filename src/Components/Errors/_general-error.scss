@@ -1,0 +1,79 @@
+.general-error {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 15px 25px;
+  background-color: #000;
+  box-shadow: 0 3px 3px rgba(#95846e, 0.7);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .error-glow {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 35px;
+    height: 95px;
+    background-color: rgba(#9b9282, 0.35);
+    transform: translate(60px, -50%) rotate(40deg);
+    animation: error-glow-mobile 2s ease-in-out forwards;
+  }
+
+  @include sm-size {
+    top: unset;
+    left: unset;
+    bottom: 40px;
+    right: 40px;
+    padding: 25px 40px;
+    box-shadow: 0 3px 5px #95846e;
+    border-radius: 8px;
+
+    .error-glow {
+      width: 70px;
+      height: 170px;
+      transform: translate(110px, -50%) rotate(40deg);
+      animation: error-glow-desktop 2.5s ease-in-out forwards;
+    }
+  }
+
+  @include lg-size {
+    padding: 20px 35px;
+  }
+
+  span {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+
+    @include sm-size {
+      font-size: 30px;
+    }
+
+    @include sm-size {
+      font-size: 23px;
+    }
+  }
+}
+
+@keyframes error-glow-mobile {
+  to {
+    transform: translate(-245px, -50%) rotate(40deg);
+  }
+}
+
+@keyframes error-glow-desktop {
+  to {
+    transform: translate(-440px, -50%) rotate(40deg);
+  }
+}

@@ -6,7 +6,7 @@ interface Props {
   quotesArr: Quote[];
 }
 
-const Quotes: React.FC<Props> = ({ quotesArr }) => {
+const Quotes: React.FC<Props> = ({ quotesArr = [] }) => {
   const { activeTargetIndex: activeQuoteIndex } = useSlideTimer(
     quotesArr.length,
     7000
