@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "./Redux/Reducers/index";
 
 import Navbar from "./Components/Navbar/Navbar";
+import GodPage from "./TestComp";
 
 function App() {
   const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
@@ -14,6 +15,9 @@ function App() {
         <Navbar links={navbarLinks} />
 
         <Switch>
+          <Route path="/gods/:godName">
+            <GodPage />
+          </Route>
           <Route path="/">
             <IndexPage />
           </Route>

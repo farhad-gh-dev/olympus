@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setGodsList, setQuotes } from "../Redux/Actions/DataActions";
 import type { RootState } from "../Redux/Reducers/index";
@@ -7,6 +7,7 @@ import IndexBackground from "../Components/IndexBackground/IndexBackground";
 import BrandLogo from "../assets/brand-logo.png";
 import Quotes from "../Components/Quotes/Quotes";
 import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
+import PageLoading from "../Components/Loadings/PageLoading";
 
 const IndexPage: React.FC = () => {
   const { godsList, quotes } = useSelector(
@@ -15,13 +16,21 @@ const IndexPage: React.FC = () => {
 
   const dispatch = useDispatch();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    dispatch(setQuotes());
-    dispatch(setGodsList());
+    const getData = async () => {
+      await dispatch(setQuotes());
+      await dispatch(setGodsList());
+      setIsLoading(false);
+    };
+
+    getData();
   }, [dispatch]);
 
   return (
     <div className="index-page _position-relative">
+      <PageLoading show={isLoading} />
       <IndexBackground />
       <a href="/" className="brand-logo _position-absolute">
         <img src={BrandLogo} alt="wiki olympus logo" />
