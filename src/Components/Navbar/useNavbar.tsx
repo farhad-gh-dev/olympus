@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import type { Link } from "./_NavbarTypes";
+import type { NavbarItem } from "./_NavbarTypes";
 
-const useNavbar = (navbarLinks: Link[]) => {
+const useNavbar = (navbarItems: NavbarItem[]) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("");
   const [activeImage, setActiveImage] = useState<string>("");
@@ -23,7 +23,7 @@ const useNavbar = (navbarLinks: Link[]) => {
   };
 
   useEffect(() => {
-    navbarLinks.forEach((link) => {
+    navbarItems.forEach((link) => {
       if (window.location.pathname === "/") {
         setActiveLink("home");
         setActiveImage("home");
@@ -32,7 +32,7 @@ const useNavbar = (navbarLinks: Link[]) => {
         setActiveImage(link.title);
       }
     });
-  }, [navbarLinks]);
+  }, [navbarItems]);
 
   return {
     isActive,

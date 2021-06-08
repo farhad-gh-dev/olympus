@@ -1,15 +1,15 @@
 import React from "react";
-import type { Link } from "../_NavbarTypes";
+import type { NavbarItem } from "../_NavbarTypes";
 
 interface Props {
-  navbarLinks: Link[];
+  navbarItems: NavbarItem[];
   activeLink: string;
   mouseEnterLinkHandler: (title: string) => void;
   mouseLeaveLinkHandler: () => void;
 }
 
 const NavbarLinks: React.FC<Props> = ({
-  navbarLinks,
+  navbarItems,
   activeLink,
   mouseEnterLinkHandler,
   mouseLeaveLinkHandler,
@@ -20,7 +20,7 @@ const NavbarLinks: React.FC<Props> = ({
       onMouseLeave={mouseLeaveLinkHandler}
       data-testid="navbar-links-ul"
     >
-      {navbarLinks.map((link) => {
+      {navbarItems.map((link) => {
         return (
           <li
             key={link.title}

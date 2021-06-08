@@ -1,8 +1,8 @@
-interface Link {
+interface NavbarItem {
   url: string;
   title: string;
   linkImage: string;
   imageAlt: string;
 }
 
-export type { Link };
+export type { NavbarItem };

@@ -1,15 +1,15 @@
 import React from "react";
-import type { Link } from "../_NavbarTypes";
+import type { NavbarItem } from "../_NavbarTypes";
 
 interface Props {
-  navbarLinks: Link[];
+  navbarItems: NavbarItem[];
   activeImage: string;
 }
 
-const NavbarImages: React.FC<Props> = ({ navbarLinks, activeImage }) => {
+const NavbarImages: React.FC<Props> = ({ navbarItems, activeImage }) => {
   return (
     <div className="navbar-images _position-relative">
-      {navbarLinks.map((link) => {
+      {navbarItems.map((link) => {
         return (
           <img
             key={link.imageAlt}
