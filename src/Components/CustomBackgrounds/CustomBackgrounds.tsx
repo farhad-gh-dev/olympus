@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import useSlideTimer from "../../Hooks/useSlideTimer";
 import { RootState } from "../../Redux/Reducers/index";
 
-const IndexBackground: React.FC = () => {
+export const IndexBackground: React.FC = () => {
   const backgroundImages = useSelector(
     (store: RootState) => store.ThemeReducer.indexPageBackgroundImages
   );
@@ -14,14 +14,14 @@ const IndexBackground: React.FC = () => {
   );
 
   return (
-    <div className="index-background">
+    <div className="custom-backgrounds index-background">
       {backgroundImages.map((bgImage, index) => {
         return (
           <img
             key={bgImage.alt}
             src={bgImage.src}
             alt={bgImage.alt}
-            className={`front-layer${
+            className={`front-image${
               index === activeImageIndex ? " active" : ""
             }`}
           />
@@ -31,4 +31,14 @@ const IndexBackground: React.FC = () => {
   );
 };
 
-export default IndexBackground;
+export const GodTemplateBackground: React.FC = () => {
+  return (
+    <div className="custom-backgrounds">
+      <video
+        src={require("../../assets/gods/zeus.mp4").default}
+        autoPlay={true}
+        className="front-video"
+      />
+    </div>
+  );
+};

@@ -9,16 +9,25 @@ interface Props {
 const NavbarImages: React.FC<Props> = ({ navbarItems, activeImage }) => {
   return (
     <div className="navbar-images _position-relative">
-      {navbarItems.map((link) => {
-        return (
-          <img
-            key={link.imageAlt}
-            src={link.linkImage}
-            alt={link.imageAlt}
-            className={`${link.title === activeImage ? "active" : ""}`}
-          />
-        );
-      })}
+      {activeImage ? (
+        navbarItems.map((link) => {
+          return (
+            <img
+              key={link.imageAlt}
+              src={link.linkImage}
+              alt={link.imageAlt}
+              className={`${link.title === activeImage ? "active" : ""}`}
+            />
+          );
+        })
+      ) : (
+        <img
+          key={navbarItems[0].imageAlt}
+          src={navbarItems[0].linkImage}
+          alt={navbarItems[0].imageAlt}
+          className="active"
+        />
+      )}
     </div>
   );
 };

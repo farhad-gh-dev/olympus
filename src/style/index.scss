@@ -13,9 +13,10 @@
 
 //pages
 @import "../Pages/index-page";
+@import "../Pages/god-template";
 
 //components
-@import "../Components/IndexBackground/index-background";
+@import "../Components/CustomBackgrounds/custom-backgrounds";
 @import "../Components/Navbar/navbar";
 @import "../Components/Navbar/NavbarLinks/navbar-links";
 @import "../Components/Navbar/NavbarImages/navbar-images";

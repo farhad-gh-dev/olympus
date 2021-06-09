@@ -1,11 +1,7 @@
-.index-background {
+.custom-backgrounds {
   position: relative;
   width: 100%;
   height: 375px;
-  background-image: $bg_mobile_img;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   z-index: -100;
   overflow: hidden;
 
@@ -29,7 +25,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: $bg_desktop_img;
 
     &::after {
       height: 100%;
@@ -43,12 +38,27 @@
     }
   }
 
-  .front-layer {
+  &.index-background {
+    background-image: $bg_mobile_img;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include sm-size {
+      background-image: $bg_desktop_img;
+    }
+  }
+
+  .front-image,
+  .front-video {
     position: absolute;
     bottom: 0;
     right: 0;
     height: 100%;
     width: auto;
+  }
+
+  .front-image {
     opacity: 0;
     visibility: hidden;
     transform: translateY(50px);
@@ -70,6 +80,24 @@
       visibility: visible;
       transform: translateY(0);
       transition: 1.1s ease-in-out;
+    }
+  }
+
+  .front-video {
+    margin: 0;
+    padding: 0;
+
+    @include sm-size {
+      min-height: 100%;
+      width: auto;
+    }
+
+    @include lg-size {
+      bottom: unset;
+      top: 0;
+      min-height: auto;
+      min-width: 100%;
+      height: auto;
     }
   }
 }
