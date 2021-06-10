@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import useSlideTimer from "../../Hooks/useSlideTimer";
 import { RootState } from "../../Redux/Reducers/index";
@@ -31,12 +31,36 @@ export const IndexBackground: React.FC = () => {
   );
 };
 
-export const GodTemplateBackground: React.FC = () => {
+interface Props {
+  targetVideo: string;
+  playVideo: boolean;
+  delay?: number;
+}
+
+export const GodTemplateBackground: React.FC<Props> = ({
+  targetVideo = "sample",
+  playVideo = false,
+  delay = 0,
+}) => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (playVideo) {
+      const timer = setTimeout(() => {
+        videoRef.current?.play();
+      }, delay);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [playVideo]);
+
   return (
     <div className="custom-backgrounds">
       <video
-        src={require("../../assets/gods/zeus.mp4").default}
-        autoPlay={true}
+        ref={videoRef}
+        src={require(`../../assets/gods/${targetVideo}.mp4`).default}
         className="front-video"
       />
     </div>
