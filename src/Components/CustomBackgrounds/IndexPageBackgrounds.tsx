@@ -14,7 +14,7 @@ const IndexPageBackground: React.FC = () => {
   );
 
   return (
-    <div className="custom-backgrounds index-background">
+    <div className="custom-backgrounds index-page-background">
       {backgroundImages.map((bgImage, index) => {
         return (
           <img
