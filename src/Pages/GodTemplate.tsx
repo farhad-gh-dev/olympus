@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GodTemplateBackground } from "../Components/CustomBackgrounds/CustomBackgrounds";
+import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
+
 import PageLoading from "../Components/Loadings/PageLoading";
 
 const GodTemplate: React.FC = () => {
@@ -13,7 +14,7 @@ const GodTemplate: React.FC = () => {
   return (
     <div className="god-template">
       <PageLoading show={isLoading} />
-      <GodTemplateBackground
+      <VideoBackground
         targetVideo={"athena"}
         playVideo={!isLoading}
         delay={550}

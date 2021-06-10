@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setGodsList, setQuotes } from "../Redux/Actions/DataActions";
 import type { RootState } from "../Redux/Reducers/index";
 
-import { IndexBackground } from "../Components/CustomBackgrounds/CustomBackgrounds";
+import IndexBackground from "../Components/CustomBackgrounds/IndexPageBackgrounds";
 import BrandLogo from "../assets/brand-logo.png";
 import Quotes from "../Components/Quotes/Quotes";
 import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
