@@ -1,29 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 interface Props {
   targetVideo: string;
-  playVideo: boolean;
   delay?: number;
+  videoLoadHandler: () => void;
 }
 
 const VideoBackground: React.FC<Props> = ({
   targetVideo = "sample",
-  playVideo = false,
   delay = 0,
+  videoLoadHandler = () => {},
 }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (playVideo) {
-      const timer = setTimeout(() => {
-        videoRef.current?.play();
-      }, delay);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [playVideo, delay]);
+  const videoPlayHandler = () => {
+    videoLoadHandler();
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, delay);
+  };
 
   return (
     <div className="custom-backgrounds">
@@ -31,6 +26,7 @@ const VideoBackground: React.FC<Props> = ({
         ref={videoRef}
         src={require(`../../assets/gods/${targetVideo}.mp4`).default}
         className="front-video"
+        onCanPlayThrough={() => videoPlayHandler()}
       />
     </div>
   );

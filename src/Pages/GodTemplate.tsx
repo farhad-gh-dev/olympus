@@ -5,19 +5,24 @@ import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
 import PageLoading from "../Components/Loadings/PageLoading";
 
 const GodTemplate: React.FC = () => {
+  const [videoIsLoaded, setVideoIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const videoLoadHandler = () => {
+    setVideoIsLoaded(true);
+  };
+
   useEffect(() => {
-    setIsLoading(false);
-  }, []);
+    if (videoIsLoaded) setIsLoading(false);
+  }, [videoIsLoaded]);
 
   return (
     <div className="god-template">
       <PageLoading show={isLoading} />
       <VideoBackground
         targetVideo={"zeus"}
-        playVideo={!isLoading}
         delay={550}
+        videoLoadHandler={videoLoadHandler}
       />
       <div className="back-button-container">
         <Link to="/" className="prev-page-button _custom-button">
