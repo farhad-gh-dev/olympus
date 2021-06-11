@@ -3,28 +3,36 @@ import React from "react";
 interface Props {
   targetVideo: string;
   delay?: number;
-  videoLoadHandler: () => void;
+  onVideoLoadHandler?: () => void;
 }
 
 const VideoBackground: React.FC<Props> = ({
   targetVideo = "sample",
   delay = 0,
-  videoLoadHandler = () => {},
+  onVideoLoadHandler = () => {},
 }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   const videoPlayHandler = () => {
-    videoLoadHandler();
+    onVideoLoadHandler();
     setTimeout(() => {
       videoRef.current?.play();
     }, delay);
+  };
+
+  const videoSrcHandler = (): string => {
+    try {
+      return require(`../../assets/gods/${targetVideo}.mp4`).default;
+    } catch {
+      return require(`../../assets/gods/athena.mp4`).default;
+    }
   };
 
   return (
     <div className="custom-backgrounds">
       <video
         ref={videoRef}
-        src={require(`../../assets/gods/${targetVideo}.mp4`).default}
+        src={videoSrcHandler()}
         className="front-video"
         onCanPlayThrough={() => videoPlayHandler()}
       />

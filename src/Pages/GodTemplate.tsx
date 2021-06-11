@@ -1,34 +1,43 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../Redux/Reducers/index";
 import { Link } from "react-router-dom";
 import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
 
 import PageLoading from "../Components/Loadings/PageLoading";
 
 const GodTemplate: React.FC = () => {
-  const [videoIsLoaded, setVideoIsLoaded] = useState(false);
+  const godInfo = useSelector((store: RootState) => store.DataReducer.godInfo);
+
+  const [videoIsReady, setVideoIsReady] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const videoLoadHandler = () => {
-    setVideoIsLoaded(true);
+  const onVideoLoadHandler = () => {
+    setVideoIsReady(true);
   };
 
   useEffect(() => {
-    if (videoIsLoaded) setIsLoading(false);
-  }, [videoIsLoaded]);
+    if (videoIsReady) setIsLoading(false);
+  }, [videoIsReady, godInfo]);
 
   return (
     <div className="god-template">
       <PageLoading show={isLoading} />
-      <VideoBackground
-        targetVideo={"zeus"}
-        delay={550}
-        videoLoadHandler={videoLoadHandler}
-      />
-      <div className="back-button-container">
-        <Link to="/" className="prev-page-button _custom-button">
-          <span>{"<"}</span>
-        </Link>
-      </div>
+      {Object.keys(godInfo).length !== 0 ? (
+        <React.Fragment>
+          <VideoBackground
+            targetVideo={godInfo.name}
+            delay={550}
+            onVideoLoadHandler={onVideoLoadHandler}
+          />
+
+          <div className="back-button-container">
+            <Link to="/" className="prev-page-button _custom-button">
+              <span>{"<"}</span>
+            </Link>
+          </div>
+        </React.Fragment>
+      ) : null}
     </div>
   );
 };

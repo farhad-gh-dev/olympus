@@ -30,11 +30,9 @@ const useNavbar = (navbarItems: NavbarItem[]) => {
       } else if (window.location.pathname.includes(link.title)) {
         setActiveLink(link.title);
         setActiveImage(link.title);
-      } else {
-        setActiveLink("");
       }
     });
-  }, [navbarItems, window.location.pathname]);
+  }, [navbarItems]);
 
   return {
     isActive,

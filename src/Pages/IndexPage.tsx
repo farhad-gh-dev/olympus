@@ -6,7 +6,7 @@ import type { RootState } from "../Redux/Reducers/index";
 import IndexBackground from "../Components/CustomBackgrounds/IndexPageBackgrounds";
 import BrandLogo from "../assets/brand-logo.png";
 import Quotes from "../Components/Quotes/Quotes";
-import ItemsSlider from "../Components/GodsSlider/ItemsSlider";
+import ItemsSlider from "../Components/ItemsSlider/ItemsSlider";
 import PageLoading from "../Components/Loadings/PageLoading";
 import GeneralError from "../Components/Errors/GeneralError";
 

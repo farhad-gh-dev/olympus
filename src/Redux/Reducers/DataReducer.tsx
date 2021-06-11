@@ -4,6 +4,16 @@ const InitialState = {
   error: false,
   quotes: [],
   godsList: [],
+  godInfo: {
+    name: "zeus",
+    categories: [
+      {
+        title: "origin",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit iusto molestiae deleniti atque neque dolor est ut cupiditate ipsam? Corporis inventore minus quidem molestias fuga provident magnam expedita voluptatibus autem.",
+      },
+    ],
+  },
 };
 
 const DataReducer = (state = InitialState, action: any) => {
