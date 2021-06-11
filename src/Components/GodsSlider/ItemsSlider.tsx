@@ -1,5 +1,6 @@
 import React from "react";
 import { SliderItem } from "./_ItemsSliderTypes";
+import { Link } from "react-router-dom";
 
 import ArrowIcon from "../../assets/index-page/slider-select-mark.svg";
 import useItemsSlider from "./useItemsSlider";
@@ -59,9 +60,9 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
                     <div className="slider-select-mark">
                       <img src={ArrowIcon} alt="arrow" />
                     </div>
-                    <a
+                    <Link
                       className="item-link"
-                      href={`/${item.name}`}
+                      to={`/${item.name}`}
                       tabIndex={
                         item.name === sliderItems[targetSlideIndex].name
                           ? 0
@@ -69,7 +70,7 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
                       }
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </div>
                 );
               })

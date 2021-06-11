@@ -23,7 +23,7 @@ const VideoBackground: React.FC<Props> = ({
         clearTimeout(timer);
       };
     }
-  }, [playVideo]);
+  }, [playVideo, delay]);
 
   return (
     <div className="custom-backgrounds">

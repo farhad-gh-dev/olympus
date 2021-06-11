@@ -15,7 +15,7 @@ const GodTemplate: React.FC = () => {
     <div className="god-template">
       <PageLoading show={isLoading} />
       <VideoBackground
-        targetVideo={"athena"}
+        targetVideo={"zeus"}
         playVideo={!isLoading}
         delay={550}
       />

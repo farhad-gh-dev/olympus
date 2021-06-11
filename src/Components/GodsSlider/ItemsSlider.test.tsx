@@ -1,12 +1,15 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
 import ItemsSlider from "./ItemsSlider";
 
 beforeEach(() => {
   render(
-    <ItemsSlider
-      sliderArr={[{ name: "athena" }, { name: "zeus" }, { name: "ares" }]}
-    />
+    <MemoryRouter>
+      <ItemsSlider
+        sliderArr={[{ name: "athena" }, { name: "zeus" }, { name: "ares" }]}
+      />
+    </MemoryRouter>
   );
 });
 
