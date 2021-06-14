@@ -1,0 +1,31 @@
+.categories-list {
+  @include lg-size {
+    display: flex;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border: 1px solid #ffffff;
+      border-left: none;
+      border-right: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(#ffffff, 0.22);
+    }
+  }
+
+  .categories-column {
+    width: 100%;
+
+    @include lg-size {
+      display: inline-block;
+      width: 375px;
+      padding-right: 15px;
+    }
+  }
+}

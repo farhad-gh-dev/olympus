@@ -47,3 +47,16 @@ h1 {
     font-size: $h1_font_size_desktop;
   }
 }
+
+h3 {
+  font-family: $secondary_font;
+  font-size: $h3_font_size_mobile;
+  letter-spacing: 0.15em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+
+  @include lg-size {
+    font-size: $h3_font_size_desktop;
+  }
+}

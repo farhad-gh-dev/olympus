@@ -1,7 +1,8 @@
-import { fetchQuotes, fetchGodsList } from "../../Api/index";
+import { fetchQuotes, fetchGodsList, fetchGodInfo } from "../../Api/index";
 
 export const SET_QUOTES = "SET_QUOTES";
 export const SET_GODS_LIST = "SET_GODS_LIST";
+export const SET_GOD_INFO = "SET_GOD_INFO";
 export const SET_ERROR = "SET_ERROR";
 
 const setError = (dispatch: any) => {
@@ -19,26 +20,43 @@ const setError = (dispatch: any) => {
 };
 
 export const setQuotes = () => async (dispatch: any) => {
-  try {
-    const data = await fetchQuotes();
-    dispatch({
-      type: SET_QUOTES,
-      payload: data,
-    });
-  } catch {
+  const [data, error] = await fetchQuotes();
+
+  if (error) {
     setError(dispatch);
+    return;
   }
+
+  dispatch({
+    type: SET_QUOTES,
+    payload: data,
+  });
 };
 
 export const setGodsList = () => async (dispatch: any) => {
-  try {
-    const data = await fetchGodsList();
+  const [data, error] = await fetchGodsList();
 
-    dispatch({
-      type: SET_GODS_LIST,
-      payload: data,
-    });
-  } catch {
+  if (error) {
     setError(dispatch);
+    return;
   }
+
+  dispatch({
+    type: SET_GODS_LIST,
+    payload: data,
+  });
+};
+
+export const setGodInfo = (godName: string) => async (dispatch: any) => {
+  const [data, error] = await fetchGodInfo(godName);
+
+  if (error) {
+    setError(dispatch);
+    return;
+  }
+
+  dispatch({
+    type: SET_GOD_INFO,
+    payload: data,
+  });
 };

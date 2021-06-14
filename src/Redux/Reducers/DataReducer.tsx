@@ -1,19 +1,15 @@
-import { SET_QUOTES, SET_GODS_LIST, SET_ERROR } from "../Actions/DataActions";
+import {
+  SET_QUOTES,
+  SET_GODS_LIST,
+  SET_GOD_INFO,
+  SET_ERROR,
+} from "../Actions/DataActions";
 
 const InitialState = {
   error: false,
   quotes: [],
   godsList: [],
-  godInfo: {
-    name: "zeus",
-    categories: [
-      {
-        title: "origin",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit iusto molestiae deleniti atque neque dolor est ut cupiditate ipsam? Corporis inventore minus quidem molestias fuga provident magnam expedita voluptatibus autem.",
-      },
-    ],
-  },
+  godInfo: {},
 };
 
 const DataReducer = (state = InitialState, action: any) => {
@@ -29,11 +25,17 @@ const DataReducer = (state = InitialState, action: any) => {
         quotes: action.payload,
       };
 
+    case SET_GOD_INFO:
+      return {
+        ...state,
+        godInfo: action.payload[0],
+      };
     case SET_ERROR:
       return {
         ...state,
         error: state.error !== action.payload ? action.payload : state.error,
       };
+
     default:
       return state;
   }
