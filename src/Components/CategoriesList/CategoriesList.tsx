@@ -1,16 +1,24 @@
 import React from "react";
-import type { Categories } from "./_CategoriesListTypes";
+import { useDispatch } from "react-redux";
+import type { Categories, CategoryItem } from "./_CategoriesListTypes";
 
 import Category from "./Category/Category";
 import getIcon from "./getIcon";
 import MythologyIcon from "../../assets/gods/icons/mythology.png";
 import MythIcon from "../../assets/gods/icons/myth.png";
+import { setActiveCategory } from "../../Redux/Actions/DataActions";
 
 interface Props {
   categoriesData: Categories;
 }
 
 const CategoriesList: React.FC<Props> = ({ categoriesData }) => {
+  const dispatch = useDispatch();
+
+  const categoryClickHandler = (categoryName: CategoryItem) => {
+    dispatch(setActiveCategory(categoryName));
+  };
+
   return (
     <div className="categories-list">
       <div className="categories-column">
@@ -21,6 +29,7 @@ const CategoriesList: React.FC<Props> = ({ categoriesData }) => {
                 key={category.title}
                 categoryData={category}
                 categoryIcon={getIcon(index)}
+                clickHandler={categoryClickHandler}
               />
             );
           }
@@ -29,7 +38,7 @@ const CategoriesList: React.FC<Props> = ({ categoriesData }) => {
       </div>
       <div className="categories-column">
         <Category
-          categoryData={{ title: "mythology" }}
+          categoryData={{ title: "mythology", description: "" }}
           categoryIcon={MythologyIcon}
           disabled={true}
         />
@@ -43,6 +52,7 @@ const CategoriesList: React.FC<Props> = ({ categoriesData }) => {
                 categoryIcon={MythIcon}
                 subCategory={true}
                 termToFilter={"mythology:"}
+                clickHandler={categoryClickHandler}
               />
             );
           }

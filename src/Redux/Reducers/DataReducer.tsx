@@ -3,6 +3,8 @@ import {
   SET_GODS_LIST,
   SET_GOD_INFO,
   SET_ERROR,
+  SET_ACTIVE_CATEGORY,
+  CLEAR_ACTIVE_CATEGORY,
 } from "../Actions/DataActions";
 
 const InitialState = {
@@ -10,6 +12,7 @@ const InitialState = {
   quotes: [],
   godsList: [],
   godInfo: {},
+  activeCategory: null,
 };
 
 const DataReducer = (state = InitialState, action: any) => {
@@ -29,6 +32,17 @@ const DataReducer = (state = InitialState, action: any) => {
       return {
         ...state,
         godInfo: action.payload[0],
+      };
+
+    case SET_ACTIVE_CATEGORY:
+      return {
+        ...state,
+        activeCategory: action.payload,
+      };
+    case CLEAR_ACTIVE_CATEGORY:
+      return {
+        ...state,
+        activeCategory: null,
       };
     case SET_ERROR:
       return {

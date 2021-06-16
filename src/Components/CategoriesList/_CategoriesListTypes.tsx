@@ -1,11 +1,11 @@
-interface Category {
+interface CategoryItem {
   title: string;
   description: string;
 }
 
 interface Categories {
   name: string;
-  categories: Category[];
+  categories: CategoryItem[];
 }
 
-export type { Categories, Category };
+export type { Categories, CategoryItem };

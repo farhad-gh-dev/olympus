@@ -1,13 +1,13 @@
 import React from "react";
+import type { CategoryItem } from "../_CategoriesListTypes";
 
 interface Props {
-  categoryData: {
-    title: string;
-  };
+  categoryData: CategoryItem;
   categoryIcon?: string;
   subCategory?: boolean;
   disabled?: boolean;
   termToFilter?: string;
+  clickHandler?: (categoryName: CategoryItem) => void;
 }
 
 const Category: React.FC<Props> = ({
@@ -16,6 +16,7 @@ const Category: React.FC<Props> = ({
   subCategory = false,
   disabled = false,
   termToFilter = "",
+  clickHandler = () => console.log(`category clicked`),
 }) => {
   return (
     <div className={`category${!subCategory ? "" : " sub-category"}`}>
@@ -28,11 +29,11 @@ const Category: React.FC<Props> = ({
         className={`category-title _custom-button${
           !disabled ? "" : " disabled"
         }`}
-        onClick={() => console.log(categoryData.title)}
+        onClick={() => clickHandler(categoryData)}
       >
         {!termToFilter
           ? categoryData.title
-          : categoryData.title.replace(termToFilter, "")}
+          : categoryData.title.replaceAll(termToFilter, "")}
       </button>
     </div>
   );

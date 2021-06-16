@@ -60,3 +60,15 @@ h3 {
     font-size: $h3_font_size_desktop;
   }
 }
+
+._show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+._hide {
+  // display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}

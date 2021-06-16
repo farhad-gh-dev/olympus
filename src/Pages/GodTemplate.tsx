@@ -1,33 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../Redux/Reducers/index";
-import { Link, useRouteMatch } from "react-router-dom";
-import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
+import React from "react";
+import useGodTemplate from "../Hooks/useGodTemplate";
 
 import PageLoading from "../Components/Loadings/PageLoading";
+import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
 import CategoriesList from "../Components/CategoriesList/CategoriesList";
-import { setGodInfo } from "../Redux/Actions/DataActions";
+import CategoryInfo from "../Components/CategoryInfo/CategoryInfo";
 
 const GodTemplate: React.FC = () => {
-  const godInfo = useSelector((store: RootState) => store.DataReducer.godInfo);
-  const dispatch = useDispatch();
-  const match = useRouteMatch();
+  const {
+    isLoading,
+    // error,
+    godInfo,
+    activeCategory,
+    onVideoLoadHandler,
+    ImageSrcHandler,
+  } = useGodTemplate();
 
-  const [videoIsReady, setVideoIsReady] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const onVideoLoadHandler = () => {
-    setVideoIsReady(true);
-  };
-
-  useEffect(() => {
-    if (videoIsReady) setIsLoading(false);
-  }, [videoIsReady, godInfo]);
-
-  useEffect(() => {
-    dispatch(setGodInfo(match.url));
-  }, [dispatch, match]);
-
+  // if(error) <Redirect />
   return (
     <div className="god-template _position-relative">
       <PageLoading show={isLoading} />
@@ -40,21 +29,39 @@ const GodTemplate: React.FC = () => {
           />
 
           <div className="back-button-container">
-            <Link to="/" className="prev-page-button _custom-button">
+            <a href="/" className="prev-page-button _custom-button">
               <span>{"<"}</span>
-            </Link>
+            </a>
           </div>
 
           <div className="text-section">
             <h3 className="title">{godInfo.name}</h3>
-            <div className="categories-panel">
-              <div className="categories-container">
+            <div className="categories-panel _position-relative">
+              <div
+                className={`categories-container${
+                  !activeCategory ? " _show" : " _hide"
+                }`}
+              >
                 <CategoriesList categoriesData={godInfo} />
               </div>
+
+              <div
+                className={`selected-category-container${
+                  activeCategory ? " _show" : " _hide"
+                }`}
+              >
+                {activeCategory ? (
+                  <CategoryInfo
+                    categoryData={activeCategory}
+                    categoryImage={ImageSrcHandler()}
+                  />
+                ) : null}
+              </div>
+
               <div className="image-container">
                 <img
                   className="category-image"
-                  src={require("../assets/gods/zeus-birth.png").default}
+                  src={ImageSrcHandler()}
                   alt="zeus"
                 />
               </div>

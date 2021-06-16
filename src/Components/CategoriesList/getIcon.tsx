@@ -4,7 +4,7 @@ import AresIcon from "../../assets/gods/icons/ares.png";
 import AthenaIcon from "../../assets/gods/icons/athena.png";
 import DemeterIcon from "../../assets/gods/icons/demeter.png";
 import ApolloIcon from "../../assets/gods/icons/apollo.png";
-import HeraIcon from "../../assets/gods/icons/hera.png";
+import DionysusIcon from "../../assets/gods/icons/dionysus.png";
 
 const icons = [
   ZeusIcon,
@@ -13,7 +13,7 @@ const icons = [
   AthenaIcon,
   ApolloIcon,
   DemeterIcon,
-  HeraIcon,
+  DionysusIcon,
 ];
 
 const getIcon = (index = 0): string => {
