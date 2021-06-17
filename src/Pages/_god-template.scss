@@ -52,6 +52,9 @@
     }
 
     .title {
+      position: absolute;
+      top: -100px;
+      left: 30px;
       padding-left: 10px;
       margin-bottom: 35px;
       background: $h3_gradient_color;
@@ -60,6 +63,9 @@
       text-transform: capitalize;
 
       @include lg-size {
+        position: relative;
+        top: 0;
+        left: 0;
         padding-left: 50px;
         margin-bottom: 80px;
       }
@@ -68,6 +74,7 @@
     .categories-panel {
       background-color: rgba(255, 255, 255, 0.088);
       border-radius: 10px;
+      margin-top: 65px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -77,6 +84,7 @@
         height: 52.77vh; // 570px for 1080h;
         background-color: rgba(0, 0, 0, 0.2);
         border-radius: 10px;
+        margin-top: 0px;
       }
 
       .categories-container {
