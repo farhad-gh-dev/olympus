@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setGodsList, setQuotes } from "../Redux/Actions/DataActions";
-import type { RootState } from "../Redux/Reducers/index";
+import React from "react";
+import useIndexPage from "../Hooks/useIndexPage";
 
 import Navbar from "../Components/Navbar/Navbar";
 import IndexBackground from "../Components/CustomBackgrounds/IndexPageBackgrounds";
@@ -12,24 +10,7 @@ import PageLoading from "../Components/Loadings/PageLoading";
 import GeneralError from "../Components/Errors/GeneralError";
 
 const IndexPage: React.FC = () => {
-  const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
-  const { error, godsList, quotes } = useSelector(
-    (store: RootState) => store.DataReducer
-  );
-
-  const dispatch = useDispatch();
-
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const getData = async () => {
-      await dispatch(setQuotes());
-      await dispatch(setGodsList());
-      setIsLoading(false);
-    };
-
-    getData();
-  }, [dispatch]);
+  const { isLoading, error, navbarLinks, quotes, godsList } = useIndexPage();
 
   return (
     <div className="index-page _position-relative">
