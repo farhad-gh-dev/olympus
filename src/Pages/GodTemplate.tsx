@@ -3,6 +3,7 @@ import useGodTemplate from "../Hooks/useGodTemplate";
 
 import PageLoading from "../Components/Loadings/PageLoading";
 import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
+import Navbar from "../Components/Navbar/Navbar";
 import CategoriesList from "../Components/CategoriesList/CategoriesList";
 import CategoryInfo from "../Components/CategoryInfo/CategoryInfo";
 
@@ -10,6 +11,7 @@ const GodTemplate: React.FC = () => {
   const {
     isLoading,
     // error,
+    navbarLinks,
     godInfo,
     activeCategory,
     onVideoLoadHandler,
@@ -27,6 +29,8 @@ const GodTemplate: React.FC = () => {
             delay={550}
             onVideoLoadHandler={onVideoLoadHandler}
           />
+
+          <Navbar links={navbarLinks} />
 
           <div className="back-button-container">
             <a href="/" className="prev-page-button _custom-button">

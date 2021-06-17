@@ -32,8 +32,7 @@ const useNavbar = (navbarItems: NavbarItem[]) => {
         setActiveImage(link.title);
       }
     });
-    // eslint-disable-next-line
-  }, [navbarItems, window.location.pathname]);
+  }, [navbarItems]);
 
   return {
     isActive,

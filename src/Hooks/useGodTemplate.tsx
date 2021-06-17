@@ -5,6 +5,7 @@ import { useRouteMatch } from "react-router-dom";
 import { setGodInfo } from "../Redux/Actions/DataActions";
 
 const useGodTemplate = () => {
+  const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
   const { godInfo, activeCategory, error } = useSelector(
     (store: RootState) => store.DataReducer
   );
@@ -45,6 +46,7 @@ const useGodTemplate = () => {
   return {
     isLoading,
     error,
+    navbarLinks,
     godInfo,
     activeCategory,
     onVideoLoadHandler,
