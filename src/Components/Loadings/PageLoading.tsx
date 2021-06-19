@@ -1,4 +1,5 @@
 import React from "react";
+import MedusaImage from "../../assets/medusa.png";
 
 interface Props {
   show: boolean;
@@ -8,7 +9,7 @@ const PageLoading: React.FC<Props> = ({ show }) => {
   return (
     <div className={`page-loading${show ? "" : " hide"}`}>
       <div className="image-container">
-        <img src="./medusa.png" alt="medusa" />
+        <img src={MedusaImage} alt="medusa" />
         <div className="left-eye"></div>
         <div className="right-eye"></div>
       </div>

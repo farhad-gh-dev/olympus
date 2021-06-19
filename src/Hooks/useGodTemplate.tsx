@@ -10,7 +10,7 @@ const useGodTemplate = () => {
     (store: RootState) => store.DataReducer
   );
   const dispatch = useDispatch();
-  const match = useRouteMatch();
+  const match: { params: { godName: string } } = useRouteMatch();
 
   const [videoIsReady, setVideoIsReady] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -40,7 +40,7 @@ const useGodTemplate = () => {
   }, [videoIsReady, godInfo]);
 
   useEffect(() => {
-    dispatch(setGodInfo(match.url));
+    dispatch(setGodInfo(match.params.godName));
   }, [dispatch, match]);
 
   return {

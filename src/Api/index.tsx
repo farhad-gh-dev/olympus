@@ -23,7 +23,7 @@ const fetchGodsList = async () => {
 const fetchGodInfo = async (godName = "zeus") => {
   try {
     const { data } = await axios.get(
-      `http://192.168.1.6:8000/olympus/gods${godName}`
+      `http://192.168.1.6:8000/olympus/gods/${godName}`
     );
     return [data, null];
   } catch (error) {

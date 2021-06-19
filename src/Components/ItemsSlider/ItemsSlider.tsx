@@ -61,7 +61,7 @@ const GodsSlider: React.FC<Props> = ({ sliderArr }) => {
                     </div>
                     <a
                       className="item-link"
-                      href={`/${item.name}`}
+                      href={`/gods/${item.name}`}
                       tabIndex={
                         item.name === sliderItems[targetSlideIndex].name
                           ? 0
