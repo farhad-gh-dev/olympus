@@ -19,17 +19,21 @@ const FallbackPage: React.FC = () => {
       </a>
 
       <div className="content-container">
-        <div className="image-container">
-          <img src={AthenaImage} alt="page was not found" />
+        <div className="first-section">
+          <div className="image-container">
+            <img src={AthenaImage} alt="page was not found" />
+          </div>
         </div>
-        <div className="text-container">
-          <p className="redirect-description">
-            what are you looking for?
-            <br />
-            page was not found
-          </p>
-          <div className="redirect-button">
-            <a href="/">go back</a>
+        <div className="second-section">
+          <div className="text-container">
+            <p className="redirect-description">
+              what are you looking for?
+              <br />
+              page was not found
+            </p>
+            <div className="redirect-button">
+              <a href="/">go back</a>
+            </div>
           </div>
         </div>
       </div>
