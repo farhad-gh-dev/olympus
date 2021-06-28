@@ -70,7 +70,7 @@
     }
   }
 
-  .front-image,
+  .layer-image,
   .front-video {
     position: absolute;
     bottom: 0;
@@ -79,28 +79,34 @@
     width: auto;
   }
 
-  .front-image {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(50px);
-    transition: 0.5s ease-in-out;
+  .front-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-    @include sm-size {
-      transform: translateY(100px);
-      height: auto;
-      width: 100%;
-    }
+    .layer-image {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(50px);
+      transition: 0.5s ease-in-out;
 
-    @include lg-size {
-      height: 100%;
-      width: auto;
-    }
+      @include sm-size {
+        transform: translateY(100px);
+        height: auto;
+        width: 100%;
+      }
 
-    &.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      transition: 1.1s ease-in-out;
+      @include lg-size {
+        height: 100%;
+        width: auto;
+      }
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: 1.1s ease-in-out;
+      }
     }
   }
 

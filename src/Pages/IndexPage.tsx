@@ -15,20 +15,24 @@ const IndexPage: React.FC = () => {
   return (
     <div className="index-page _position-relative">
       <PageLoading show={isLoading} />
-      <GeneralError show={error} delay={900} />
-      <Navbar links={navbarLinks} />
-      <IndexBackground />
-      <a href="/" className="brand-logo _position-absolute">
-        <img src={BrandLogo} alt="wiki olympus logo" />
-      </a>
+      {!isLoading ? (
+        <React.Fragment>
+          <GeneralError show={error} delay={900} />
+          <Navbar links={navbarLinks} />
+          <IndexBackground />
+          <a href="/" className="brand-logo _position-absolute">
+            <img src={BrandLogo} alt="wiki olympus logo" />
+          </a>
 
-      <div className="text-area">
-        <h1 className="main-title">gods of olympus</h1>
-        <Quotes quotesArr={quotes} />
-      </div>
-      <div className="slider-section">
-        <ItemsSlider sliderArr={godsList} />
-      </div>
+          <div className="text-area">
+            <h1 className="main-title">gods of olympus</h1>
+            <Quotes quotesArr={quotes} />
+          </div>
+          <div className="slider-section">
+            <ItemsSlider sliderArr={godsList} />
+          </div>
+        </React.Fragment>
+      ) : null}
     </div>
   );
 };
