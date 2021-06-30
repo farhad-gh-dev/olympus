@@ -1,5 +1,6 @@
 .categories-list {
-  @include lg-size {
+  @include sm-size {
+    width: 100%;
     display: flex;
     overflow-y: auto;
 
@@ -19,8 +20,16 @@
     }
   }
 
+  @include lg-size {
+    width: auto;
+  }
+
   .categories-column {
     width: 100%;
+
+    @include sm-size {
+      width: 50%;
+    }
 
     @include lg-size {
       display: inline-block;

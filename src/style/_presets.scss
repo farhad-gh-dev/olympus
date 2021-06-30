@@ -56,6 +56,10 @@ h3 {
   margin: 0;
   padding: 0;
 
+  @include sm-size {
+    font-size: $h3_font_size_tablet;
+  }
+
   @include lg-size {
     font-size: $h3_font_size_desktop;
   }

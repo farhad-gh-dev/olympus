@@ -1,4 +1,8 @@
 .category-info {
+  @include sm-size {
+    overflow-y: auto;
+  }
+
   @include lg-size {
     display: flex;
     flex-direction: column;
@@ -40,7 +44,7 @@
   }
 
   .category-description {
-    @include lg-size {
+    @include sm-size {
       flex-grow: 1;
       padding-right: 10px;
       overflow-y: auto;
