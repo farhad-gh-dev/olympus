@@ -6,6 +6,7 @@
     position: absolute;
     top: 20px;
     left: 0;
+    z-index: 1000;
 
     @include sm-size {
       top: 35px;
@@ -44,11 +45,18 @@
     margin: 30px 0 25px;
 
     @include sm-size {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
       margin: 0;
       padding: 150px 25px 50px;
     }
 
     @include lg-size {
+      display: unset;
+      height: auto;
+      width: auto;
       position: absolute;
       bottom: 75px;
       left: 65px;
@@ -89,11 +97,11 @@
       overflow: hidden;
 
       @include sm-size {
-        // flex-direction: row;
-        height: 60vh; // 570px for 1080h;
+        flex-grow: 1;
       }
 
       @include lg-size {
+        flex-grow: unset;
         flex-direction: row;
         height: 52.77vh; // 570px for 1080h;
         background-color: rgba(0, 0, 0, 0.2);
@@ -113,8 +121,12 @@
         @include lg-size {
           display: flex;
           flex-direction: row;
-          padding: 60px 0 60px 50px;
+          padding: 40px 0 40px 30px;
           overflow-y: hidden;
+        }
+
+        @include xl-size {
+          padding: 60px 0 60px 50px;
         }
 
         &._hide {
@@ -131,15 +143,19 @@
         transition: 0.4s ease-in-out;
 
         @include sm-size {
-          height: 100%;
-          overflow-y: hidden;
+          overflow-y: auto;
+          clear: both;
         }
 
         @include lg-size {
           display: flex;
           flex-direction: row;
-          padding: 25px 0 50px 50px;
+          padding: 25px 0 30px 30px;
           overflow-y: hidden;
+        }
+
+        @include xl-size {
+          padding: 25px 0 50px 50px;
         }
 
         &._hide {
@@ -155,10 +171,18 @@
 
         @include lg-size {
           display: block;
-          width: 500px;
+          width: 350px;
           height: 100%;
           text-align: center;
           padding: 30px 0;
+        }
+
+        @include xl-size {
+          width: 450px;
+        }
+
+        @include xxl-size {
+          width: 500px;
         }
 
         .category-image {
