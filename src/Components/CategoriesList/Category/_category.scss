@@ -2,17 +2,45 @@
   display: flex;
   margin-bottom: 28px;
 
+  @include sm-size {
+    margin-bottom: 18px;
+  }
+
   @include lg-size {
+    margin-bottom: 20px;
+  }
+
+  @include xl-size {
+    margin-bottom: 25px;
+  }
+
+  @include xxl-size {
     margin-bottom: 30px;
   }
 
   .category-icon {
     margin-right: 20px;
 
+    @include xl-size {
+      margin-right: 15px;
+    }
+
+    @include xxl-size {
+      margin-right: 20px;
+    }
+
     img {
       height: 40px;
 
       @include lg-size {
+        height: 45px;
+      }
+
+      @include xl-size {
+        height: 40px;
+      }
+
+      @include xxl-size {
         height: 45px;
       }
     }
@@ -50,6 +78,16 @@
       }
     }
 
+    @include xl-size {
+      font-size: 27px;
+      line-height: 31px;
+    }
+
+    @include xxl-size {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
     &.disabled {
       pointer-events: none;
     }
@@ -59,7 +97,11 @@
     margin-bottom: 15px;
     padding-left: 25px;
 
-    @include lg-size {
+    @include xl-size {
+      margin-bottom: 17px;
+    }
+
+    @include xxl-size {
       margin-bottom: 20px;
     }
 
