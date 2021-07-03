@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/Reducers/index";
 import { useRouteMatch } from "react-router-dom";
-import { setGodInfo } from "../Redux/Actions/DataActions";
+import { setGodInfo, setActiveCategory } from "../Redux/Actions/DataActions";
 
 const useGodTemplate = () => {
   const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
@@ -35,6 +35,10 @@ const useGodTemplate = () => {
     }
   };
 
+  const clearActiveCategory = () => {
+    dispatch(setActiveCategory(null));
+  };
+
   useEffect(() => {
     if (videoIsReady) setIsLoading(false);
   }, [videoIsReady, godInfo]);
@@ -49,6 +53,7 @@ const useGodTemplate = () => {
     navbarLinks,
     godInfo,
     activeCategory,
+    clearActiveCategory,
     onVideoLoadHandler,
     ImageSrcHandler,
   };

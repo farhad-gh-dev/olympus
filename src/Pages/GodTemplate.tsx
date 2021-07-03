@@ -15,6 +15,7 @@ const GodTemplate: React.FC = () => {
     navbarLinks,
     godInfo,
     activeCategory,
+    clearActiveCategory,
     onVideoLoadHandler,
     ImageSrcHandler,
   } = useGodTemplate();
@@ -59,6 +60,7 @@ const GodTemplate: React.FC = () => {
                   <CategoryInfo
                     categoryData={activeCategory}
                     categoryImage={ImageSrcHandler()}
+                    backHandler={() => clearActiveCategory()}
                   />
                 ) : null}
               </div>

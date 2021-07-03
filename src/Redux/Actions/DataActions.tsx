@@ -69,9 +69,3 @@ export const setActiveCategory = (categoryData: any) => {
     payload: categoryData,
   };
 };
-
-export const clearActiveCategory = () => {
-  return {
-    type: SET_ACTIVE_CATEGORY,
-  };
-};
