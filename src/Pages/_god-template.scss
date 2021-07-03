@@ -6,7 +6,7 @@
     position: absolute;
     top: 20px;
     left: 0;
-    z-index: 1000;
+    z-index: 100;
 
     @include sm-size {
       top: 35px;

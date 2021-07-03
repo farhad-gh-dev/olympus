@@ -5,6 +5,18 @@
     letter-spacing: 0.15em;
 
     @include md-size {
+      margin-bottom: 40px;
+      padding: 25px;
+      letter-spacing: 0.35em;
+    }
+
+    @include lg-size {
+      margin-bottom: 50px;
+      padding: 25px;
+      letter-spacing: 0.4em;
+    }
+
+    @include xl-size {
       margin-bottom: 70px;
       padding: 30px;
       letter-spacing: 0.45em;
@@ -17,6 +29,13 @@
       transition: opacity 0.25s ease-in-out;
 
       @include md-size {
+        font-size: 40px;
+      }
+
+      @include lg-size {
+        font-size: 50px;
+      }
+      @include xl-size {
         font-size: 60px;
       }
 
@@ -33,6 +52,14 @@
         color: $navbar_accent_color;
 
         @include md-size {
+          font-size: 60px;
+        }
+
+        @include lg-size {
+          font-size: 75px;
+        }
+
+        @include xl-size {
           font-size: 90px;
         }
       }

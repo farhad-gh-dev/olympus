@@ -113,17 +113,27 @@
         @include md-size {
           height: auto;
           flex-grow: 1;
-          padding: 50px 200px 50px 0;
+          padding: 50px 80px 50px 0;
           order: 2;
+        }
+
+        @include xl-size {
+          padding: 50px 200px 50px 0;
         }
       }
 
       .navbar-links-container {
-        padding: 100px 0 100px;
+        padding: 80px 0;
 
         @include md-size {
-          width: 38%;
+          width: auto;
+          padding: 100px 90px;
           order: 1;
+        }
+
+        @include xl-size {
+          padding: 0;
+          width: 38%;
         }
       }
     }
