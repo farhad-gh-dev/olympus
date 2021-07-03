@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import useGodTemplate from "../Hooks/useGodTemplate";
 
 import PageLoading from "../Components/Loadings/PageLoading";
@@ -10,7 +11,7 @@ import CategoryInfo from "../Components/CategoryInfo/CategoryInfo";
 const GodTemplate: React.FC = () => {
   const {
     isLoading,
-    // error,
+    error,
     navbarLinks,
     godInfo,
     activeCategory,
@@ -18,7 +19,7 @@ const GodTemplate: React.FC = () => {
     ImageSrcHandler,
   } = useGodTemplate();
 
-  // if(error) <Redirect />
+  if (error) return <Redirect to="/404" />;
   return (
     <div className="god-template _position-relative">
       <PageLoading show={isLoading} />
