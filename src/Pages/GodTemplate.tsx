@@ -4,6 +4,7 @@ import useGodTemplate from "../Hooks/useGodTemplate";
 
 import PageLoading from "../Components/Loadings/PageLoading";
 import VideoBackground from "../Components/CustomBackgrounds/VideoBackground";
+import PreviousPageButton from "../Components/PreviousPageButton/PreviousPageButton";
 import Navbar from "../Components/Navbar/Navbar";
 import CategoriesList from "../Components/CategoriesList/CategoriesList";
 import CategoryInfo from "../Components/CategoryInfo/CategoryInfo";
@@ -32,13 +33,9 @@ const GodTemplate: React.FC = () => {
             onVideoLoadHandler={onVideoLoadHandler}
           />
 
-          <Navbar links={navbarLinks} />
+          <PreviousPageButton />
 
-          <div className="back-button-container">
-            <a href="/" className="prev-page-button _custom-button">
-              <span>{"<"}</span>
-            </a>
-          </div>
+          <Navbar links={navbarLinks} />
 
           <div className="text-section">
             <h3 className="title">{godInfo.name}</h3>

@@ -1,0 +1,36 @@
+.previous-page-button {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 100;
+
+  @include sm-size {
+    top: 35px;
+  }
+
+  .previous-page-link {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 25px;
+    background: $button_gradient_color;
+
+    @include sm-size {
+      width: 90px;
+      height: 50px;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: #000000;
+
+      @include sm-size {
+        font-size: 70px;
+      }
+    }
+  }
+}

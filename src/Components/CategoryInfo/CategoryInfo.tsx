@@ -28,7 +28,7 @@ const CategoryInfo: React.FC<Props> = ({
         <span>{categoryData.title.replace("mythology:", "")}</span>
       </div>
       <div className="category-image">
-        <img src={categoryImage} alt="category image" />
+        <img src={categoryImage} alt="category" />
       </div>
       <div className="category-description">
         <p>

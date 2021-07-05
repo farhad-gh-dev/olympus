@@ -39,7 +39,8 @@
   }
 
   &.index-page-background,
-  &.fallback-page-background {
+  &.fallback-page-background,
+  &.credits-page-background {
     background-image: $bg_mobile_img;
     background-size: cover;
     background-repeat: no-repeat;
