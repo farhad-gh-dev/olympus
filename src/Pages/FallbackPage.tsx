@@ -18,7 +18,7 @@ const FallbackPage: React.FC = () => {
         <img src={BrandLogo} alt="wiki olympus logo" />
       </a>
 
-      <div className="content-container">
+      <div className="page-content">
         <div className="first-section">
           <div className="image-container">
             <img src={AthenaImage} alt="page was not found" />
