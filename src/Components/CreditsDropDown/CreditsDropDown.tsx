@@ -1,21 +1,48 @@
 import React from "react";
 
-const CreditsDropDown: React.FC = () => {
+interface dropdownItem {
+  itemTitle: string;
+  itemLink: { linkTitle: string; linkUrl: string };
+}
+
+interface Props {
+  isActive: boolean;
+  dropdownTitle?: string;
+  dropdownItems: dropdownItem[];
+  toggleHandler: (targetCategory: string) => void;
+}
+
+const CreditsDropDown: React.FC<Props> = ({
+  isActive = false,
+  dropdownTitle = "dropdown",
+  dropdownItems,
+  toggleHandler,
+}) => {
   return (
-    <div className="credits-dropdown">
+    <div className={`credits-dropdown${isActive ? " active" : ""}`}>
       <div className="dropdown-container">
-        <div className="dropdown-button">
-          <h5 className="dropdown-title">3d models</h5>
+        <button
+          className="dropdown-button _custom-button"
+          onClick={() => toggleHandler(dropdownTitle)}
+        >
+          <h5 className="dropdown-title">{dropdownTitle}</h5>
           <div className="dropdown-icon">{">"}</div>
-        </div>
+        </button>
         <div className="dropdown-items-container">
           <ul>
-            <li>
-              <span className="dropdown-item-title">zeus model:</span>
-              <a href="/" className="dropdown-item-link">
-                on sketchfab
-              </a>
-            </li>
+            {dropdownItems.map((item) => {
+              return (
+                <li>
+                  <span className="dropdown-item-title">{item.itemTitle}:</span>
+                  <a
+                    href={item.itemLink.linkUrl}
+                    className="dropdown-item-link"
+                  >
+                    {item.itemLink.linkTitle}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
