@@ -6,6 +6,7 @@ import CreditsPageBackground from "../Components/CustomBackgrounds/CredistPageBa
 import PreviousPageButton from "../Components/PreviousPageButton/PreviousPageButton";
 import Navbar from "../Components/Navbar/Navbar";
 import CreditsDropDown from "../Components/CreditsDropDown/CreditsDropDown";
+import ModelsImage from "../assets/credits-page/3d-models.png";
 
 const CreditsPage: React.FC = () => {
   const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
@@ -108,6 +109,11 @@ const CreditsPage: React.FC = () => {
                 />
               );
             })}
+          </div>
+        </div>
+        <div className="right-side">
+          <div className="dropdown-image-container">
+            <img src={ModelsImage} alt="category" />
           </div>
         </div>
       </div>

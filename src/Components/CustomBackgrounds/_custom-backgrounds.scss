@@ -51,7 +51,8 @@
     }
   }
 
-  &.fallback-page-background {
+  &.fallback-page-background,
+  &.credits-page-background {
     position: absolute;
     top: 0;
     left: 0;
