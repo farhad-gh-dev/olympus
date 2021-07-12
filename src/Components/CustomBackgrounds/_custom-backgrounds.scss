@@ -51,8 +51,7 @@
     }
   }
 
-  &.fallback-page-background,
-  &.credits-page-background {
+  &.fallback-page-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -68,6 +67,27 @@
       &::after {
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  &.credits-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 375px;
+
+    @include sm-size {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include sm-size {
+      &::after {
+        display: none;
       }
     }
   }

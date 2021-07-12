@@ -3,27 +3,45 @@ import { useSelector } from "react-redux";
 import { RootState } from "../Redux/Reducers/index";
 
 import CreditsPageBackground from "../Components/CustomBackgrounds/CredistPageBackground";
-import PreviousPageButton from "../Components/PreviousPageButton/PreviousPageButton";
+import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
 import CreditsDropDown from "../Components/CreditsDropDown/CreditsDropDown";
 import ModelsImage from "../assets/credits-page/3d-models.png";
+import ImagesImage from "../assets/credits-page/images.png";
+import ArticlesImage from "../assets/credits-page/articles.png";
 
 const CreditsPage: React.FC = () => {
   const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);
-  const [activeDropdown, setActiveDropdown] = useState("3d models");
+  const [activeDropdown, setActiveDropdown] = useState("articles");
 
   const dropdownTogglerHandler = (targetCategory: string) => {
-    if (activeDropdown === targetCategory) {
-      setActiveDropdown("");
-      return;
-    }
+    if (activeDropdown === targetCategory) return;
 
     setActiveDropdown(targetCategory);
   };
 
   const creditsData = [
     {
+      categoryName: "articles",
+      categoryImage: ArticlesImage,
+      categoryItems: [
+        {
+          itemTitle: "zeus model",
+          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
+        },
+        {
+          itemTitle: "athena model",
+          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
+        },
+        {
+          itemTitle: "ares model",
+          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
+        },
+      ],
+    },
+    {
       categoryName: "3d models",
+      categoryImage: ModelsImage,
       categoryItems: [
         {
           itemTitle: "zeus model",
@@ -41,6 +59,7 @@ const CreditsPage: React.FC = () => {
     },
     {
       categoryName: "images",
+      categoryImage: ImagesImage,
       categoryItems: [
         {
           itemTitle: "zeus model",
@@ -54,23 +73,6 @@ const CreditsPage: React.FC = () => {
           itemTitle: "ares model",
           itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
         },
-        {
-          itemTitle: "zeus model",
-          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
-        },
-        {
-          itemTitle: "athena model",
-          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
-        },
-        {
-          itemTitle: "ares model",
-          itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
-        },
-      ],
-    },
-    {
-      categoryName: "articles",
-      categoryItems: [
         {
           itemTitle: "zeus model",
           itemLink: { linkTitle: "on sketchfab", linkUrl: "/sketchfab" },
@@ -91,7 +93,9 @@ const CreditsPage: React.FC = () => {
     <div className="credits-page">
       <CreditsPageBackground />
 
-      <PreviousPageButton />
+      <a href="/" className="brand-logo _position-absolute">
+        <img src={BrandLogo} alt="wiki olympus logo" />
+      </a>
 
       <Navbar links={navbarLinks} />
 
@@ -113,7 +117,17 @@ const CreditsPage: React.FC = () => {
         </div>
         <div className="right-side">
           <div className="dropdown-image-container">
-            <img src={ModelsImage} alt="category" />
+            {creditsData.map((category) => {
+              return (
+                <img
+                  src={category.categoryImage}
+                  alt="category"
+                  className={`${
+                    category.categoryName === activeDropdown ? "show" : "hide"
+                  }`}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
