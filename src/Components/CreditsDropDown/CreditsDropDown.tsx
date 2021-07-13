@@ -37,6 +37,8 @@ const CreditsDropDown: React.FC<Props> = ({
                   <a
                     href={item.itemLink.linkUrl}
                     className="dropdown-item-link"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     {item.itemLink.linkTitle}
                   </a>
