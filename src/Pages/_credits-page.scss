@@ -122,7 +122,6 @@
 
       .dropdown-image-container {
         position: relative;
-        padding-right: 0px;
         max-height: 100%;
         padding: 10px 0 30px;
         overflow: hidden;
@@ -138,9 +137,8 @@
         }
 
         img {
+          max-height: 100%;
           max-width: 100%;
-          max-height: inherit;
-          height: inherit;
           transform: translateY(40px);
           transition: all 0.7s ease-in-out;
           transition-property: opacity, transform;
