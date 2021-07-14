@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import IndexPage from "./Pages/IndexPage";
+import AboutPage from "./Pages/AboutPage";
 import CreditsPage from "./Pages/CreditsPage";
 import GodTemplate from "./Pages/GodTemplate";
 import FallbackPage from "./Pages/FallbackPage";
@@ -12,6 +13,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <IndexPage />
+          </Route>
+          <Route path="/about">
+            <AboutPage />
           </Route>
           <Route path="/credits">
             <CreditsPage />
