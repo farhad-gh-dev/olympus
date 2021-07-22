@@ -73,44 +73,71 @@
       .description-panel {
         position: relative;
         flex-grow: 1;
-        width: 950px;
-        padding: 65px 50px 100px;
+        width: 100%;
+        padding: 25px 15px;
         background-color: rgba(255, 255, 255, 0.06);
-        border-radius: 10px;
+        border-radius: 5px;
+
+        @include sm-size {
+          padding: 65px 50px 100px;
+          width: 950px;
+          border-radius: 10px;
+        }
 
         .description {
           padding: 0 15px;
 
           p {
             margin: 0;
-            font-size: 25px;
-            line-height: 32px;
+            font-size: 16px;
+            line-height: 18px;
             letter-spacing: 0.035em;
             opacity: 85%;
+
+            @include sm-size {
+              font-size: 25px;
+              line-height: 32px;
+              opacity: 100%;
+            }
           }
         }
 
         .top-left-frame,
         .bottom-right-frame {
           position: absolute;
-          top: 45px;
-          left: 40px;
+          top: 15px;
+          left: 15px;
+
+          @include sm-size {
+            top: 45px;
+            left: 40px;
+          }
 
           div {
             &:first-child {
-              width: 30px;
-              height: 2px;
+              width: 20px;
+              height: 1px;
               background-color: #c4b480;
               border-radius: 5px;
+
+              @include sm-size {
+                width: 30px;
+                height: 2px;
+              }
             }
             &:last-child {
               position: absolute;
               top: 0;
               left: 0;
-              width: 2px;
-              height: 30px;
+              width: 1px;
+              height: 20px;
               background-color: #c4b480;
               border-radius: 5px;
+
+              @include sm-size {
+                width: 2px;
+                height: 30px;
+              }
             }
           }
         }
@@ -118,9 +145,14 @@
         .bottom-right-frame {
           top: unset;
           left: unset;
-          bottom: 45px;
-          right: 40px;
+          bottom: 15px;
+          right: 15px;
           transform: rotate(180deg);
+
+          @include sm-size {
+            bottom: 45px;
+            right: 40px;
+          }
         }
       }
     }
