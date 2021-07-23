@@ -80,6 +80,10 @@
 
         @include sm-size {
           padding: 65px 50px 100px;
+        }
+
+        @include lg-size {
+          padding: 65px 50px 100px;
           width: 950px;
           border-radius: 10px;
         }
