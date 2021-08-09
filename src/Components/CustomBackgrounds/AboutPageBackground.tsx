@@ -1,5 +1,6 @@
 import React from "react";
 import AboutImage from "../../assets/about-page.png";
+import "./custom-backgrounds.scss";
 
 const AboutPageBackground: React.FC = () => {
   return (

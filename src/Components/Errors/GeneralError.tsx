@@ -1,4 +1,5 @@
 import React from "react";
+import "./general-error.scss";
 
 interface Props {
   show?: boolean;

@@ -1,3 +1,6 @@
+@import "../style/breakpoints";
+@import "../style/variables";
+
 .credits-page {
   width: 100vw;
   height: 100vh;
@@ -6,7 +9,6 @@
     top: 25px;
     left: $sides_spacing_mobile - 5px;
     z-index: 100;
-    // @include animate-opacity-translate(0, -60px, 0, 0.9s, ease-out, 0.3s);
 
     &:focus-visible {
       img {

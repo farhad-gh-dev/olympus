@@ -1,3 +1,5 @@
+@import "../../style/breakpoints";
+
 .category-info {
   @include lg-size {
     display: flex;

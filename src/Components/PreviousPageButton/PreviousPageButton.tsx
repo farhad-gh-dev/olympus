@@ -1,4 +1,5 @@
 import React from "react";
+import "./previous-page-button.scss";
 
 const PreviousPageButton: React.FC = () => {
   return (

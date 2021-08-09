@@ -1,4 +1,5 @@
 import React from "react";
+import "./credits-dropdown.scss";
 
 interface dropdownItem {
   itemTitle: string;

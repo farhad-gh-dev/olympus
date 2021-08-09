@@ -4,6 +4,7 @@ import useAboutPage from "../Hooks/useAboutPage";
 import AboutPageBackground from "../Components/CustomBackgrounds/AboutPageBackground";
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
+import "./about-page.scss";
 
 const AboutPage: React.FC = () => {
   const { navbarLinks } = useAboutPage();

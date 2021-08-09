@@ -5,6 +5,7 @@ import CreditsPageBackground from "../Components/CustomBackgrounds/CredistPageBa
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
 import CreditsDropDown from "../Components/CreditsDropDown/CreditsDropDown";
+import "./credits-page.scss";
 
 const CreditsPage: React.FC = () => {
   const {

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import useSlideTimer from "../../Hooks/useSlideTimer";
 import { RootState } from "../../Redux/Reducers/index";
+import "./custom-backgrounds.scss";
 
 const IndexPageBackground: React.FC = () => {
   const backgroundImages = useSelector(

@@ -1,5 +1,6 @@
 import React from "react";
 import BackIcon from "../../assets/back.svg";
+import "./category-info.scss";
 
 interface Props {
   categoryData: {

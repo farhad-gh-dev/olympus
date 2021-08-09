@@ -1,5 +1,6 @@
 import React from "react";
 import MedusaImage from "../../assets/medusa.png";
+import "./page-loading.scss";
 
 interface Props {
   show: boolean;

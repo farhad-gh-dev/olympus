@@ -1,6 +1,7 @@
 import React from "react";
 import useSlideTimer from "../../Hooks/useSlideTimer";
 import type { Quote } from "./_QuotesTypes";
+import "./quotes.scss";
 
 interface Props {
   quotesArr: Quote[];

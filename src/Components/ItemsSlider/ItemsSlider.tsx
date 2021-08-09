@@ -4,6 +4,7 @@ import { SliderItem } from "./_ItemsSliderTypes";
 import ArrowIcon from "../../assets/index-page/slider-select-mark.svg";
 import useItemsSlider from "./useItemsSlider";
 import useSliderOffset from "./useSliderOffset";
+import "./items-slider.scss";
 
 interface Props {
   sliderArr: SliderItem[];

@@ -8,6 +8,7 @@ import PreviousPageButton from "../Components/PreviousPageButton/PreviousPageBut
 import Navbar from "../Components/Navbar/Navbar";
 import CategoriesList from "../Components/CategoriesList/CategoriesList";
 import CategoryInfo from "../Components/CategoryInfo/CategoryInfo";
+import "./god-template.scss";
 
 const GodTemplate: React.FC = () => {
   const {

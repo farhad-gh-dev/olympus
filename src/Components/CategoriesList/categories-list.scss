@@ -1,3 +1,5 @@
+@import "../../style/breakpoints";
+
 .categories-list {
   @include sm-size {
     width: 100%;

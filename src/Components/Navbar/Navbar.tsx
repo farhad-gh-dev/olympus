@@ -3,9 +3,9 @@ import { NavbarItem } from "./_NavbarTypes";
 import useNavbar from "./useNavbar";
 import NavbarLinks from "./NavbarLinks/NavbarLinks";
 import NavbarImages from "./NavbarImages/NavbarImages";
-
 import ShieldImage from "../../assets/shield.png";
 import SpearImage from "../../assets/spear.png";
+import "./navbar.scss";
 
 interface Props {
   links: NavbarItem[];

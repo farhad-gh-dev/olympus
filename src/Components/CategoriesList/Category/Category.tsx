@@ -1,5 +1,6 @@
 import React from "react";
 import type { CategoryItem } from "../_CategoriesListTypes";
+import "./category.scss";
 
 interface Props {
   categoryData: CategoryItem;

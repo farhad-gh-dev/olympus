@@ -1,5 +1,6 @@
 import React from "react";
 import type { NavbarItem } from "../_NavbarTypes";
+import "./navbar-links.scss";
 
 interface Props {
   navbarItems: NavbarItem[];

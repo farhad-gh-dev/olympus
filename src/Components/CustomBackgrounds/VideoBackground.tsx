@@ -1,4 +1,5 @@
 import React from "react";
+import "./custom-backgrounds.scss";
 
 interface Props {
   targetVideo: string;

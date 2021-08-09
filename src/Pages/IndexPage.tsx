@@ -8,6 +8,7 @@ import Quotes from "../Components/Quotes/Quotes";
 import ItemsSlider from "../Components/ItemsSlider/ItemsSlider";
 import PageLoading from "../Components/Loadings/PageLoading";
 import GeneralError from "../Components/Errors/GeneralError";
+import "./index-page.scss";
 
 const IndexPage: React.FC = () => {
   const { isLoading, error, navbarLinks, quotes, godsList } = useIndexPage();

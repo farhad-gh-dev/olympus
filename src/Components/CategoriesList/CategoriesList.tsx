@@ -7,6 +7,7 @@ import getIcon from "./getIcon";
 import MythologyIcon from "../../assets/gods/icons/mythology.png";
 import MythIcon from "../../assets/gods/icons/myth.png";
 import { setActiveCategory } from "../../Redux/Actions/DataActions";
+import "./categories-list.scss";
 
 interface Props {
   categoriesData: Categories;

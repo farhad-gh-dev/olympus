@@ -6,6 +6,7 @@ import FallbackPageBackground from "../Components/CustomBackgrounds/FallbackPage
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
 import AthenaImage from "../assets/404.png";
+import "./fallback-page.scss";
 
 const FallbackPage: React.FC = () => {
   const { navbarLinks } = useSelector((store: RootState) => store.ThemeReducer);

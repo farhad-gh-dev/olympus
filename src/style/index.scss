@@ -7,26 +7,3 @@
 @import "./button";
 @import "./animation";
 @import "./presets";
-
-@import "../Components/Loadings/page-loading";
-@import "../Components/Errors/general-error";
-
-//pages
-@import "../Pages/fallback-page";
-@import "../Pages/index-page";
-@import "../Pages/about-page";
-@import "../Pages/credits-page";
-@import "../Pages/god-template";
-
-//components
-@import "../Components/CustomBackgrounds/custom-backgrounds";
-@import "../Components/Navbar/navbar";
-@import "../Components/Navbar/NavbarLinks/navbar-links";
-@import "../Components/Navbar/NavbarImages/navbar-images";
-@import "../Components/Quotes/quotes";
-@import "../Components/ItemsSlider/items-slider";
-@import "../Components/PreviousPageButton/previous-page-button";
-@import "../Components/CategoriesList/categories-list";
-@import "../Components/CategoriesList/Category/category";
-@import "../Components/CategoryInfo/category-info";
-@import "../Components/CreditsDropDown/credits-dropdown";
