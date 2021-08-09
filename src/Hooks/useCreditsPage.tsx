@@ -6,7 +6,7 @@ const useCreditsPage = () => {
   const { navbarLinks, creditsData } = useSelector(
     (store: RootState) => store.ThemeReducer
   );
-  const [activeDropdown, setActiveDropdown] = useState("articles");
+  const [activeDropdown, setActiveDropdown] = useState("");
   const [activeImage, setActiveImage] = useState("articles");
 
   const dropdownToggleHandler = (targetCategory: string) => {
