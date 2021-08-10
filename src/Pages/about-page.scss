@@ -60,13 +60,17 @@
     }
 
     .main-title {
-      margin: 0 0 65px !important;
+      margin: 0 0 28px !important;
       background: $h1_gradient_color;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
       @include lg-size {
-        margin: 0 0 45px;
+        margin: 0 0 45px !important;
+      }
+
+      @include lg-size {
+        margin: 0 0 65px !important;
       }
     }
 
@@ -86,7 +90,6 @@
       .description-panel {
         position: relative;
         flex-grow: 1;
-        width: 100%;
         padding: 25px 15px 70px;
         background-color: rgba(255, 255, 255, 0.06);
         border-radius: 5px;
@@ -112,6 +115,12 @@
             opacity: 85%;
 
             @include sm-size {
+              font-size: 20px;
+              line-height: 24px;
+              opacity: 100%;
+            }
+
+            @include lg-size {
               font-size: 25px;
               line-height: 32px;
               opacity: 100%;
