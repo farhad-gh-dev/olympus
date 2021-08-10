@@ -4,6 +4,7 @@ import useAboutPage from "../Hooks/useAboutPage";
 import AboutPageBackground from "../Components/CustomBackgrounds/AboutPageBackground";
 import BrandLogo from "../assets/brand-logo.png";
 import Navbar from "../Components/Navbar/Navbar";
+import GithubImage from "../assets/github.svg";
 import "./about-page.scss";
 
 const AboutPage: React.FC = () => {
@@ -22,18 +23,23 @@ const AboutPage: React.FC = () => {
       <div className="page-content">
         <div className="left-side">
           <h1 className="main-title">about us</h1>
-          <div className="description-panel">
+          <div className="description-panel _position-relative">
             <div className="description">
               <p>
-                this website is a personal project with no commercial use or
-                profit. attribution to the owners of assets used in this project
-                is mentioned on credits page.
+                this website is a personal project which i designed and
+                developed. i have a passion for designing unique and interactive
+                interfaces, and i looove mythology (specially greek mythology).
+                so i spent sometime on thinking about the idea and voila, here's
+                the result.
               </p>
               <br />
               <br />
               <p>
-                all rights goes to creator of this project farhad gh, in case of
-                any use of this project attribution is needed.
+                attribution to the owners of assets used in this project is
+                mentioned on credits page.In case of any use of this project
+                attribution to my github is needed. also if you are willing to
+                create content for this platform you are more than welcome to
+                contact me and we will discuss the rest.
               </p>
             </div>
             <div className="top-left-frame">
@@ -43,6 +49,16 @@ const AboutPage: React.FC = () => {
             <div className="bottom-right-frame">
               <div></div>
               <div></div>
+            </div>
+            <div className="social-media-container">
+              <a
+                href="https://github.com/farhad-gh-dev"
+                target="_blank"
+                rel="noreferrer"
+                className="social-media-link"
+              >
+                <img src={GithubImage} alt="github" />
+              </a>
             </div>
           </div>
         </div>
