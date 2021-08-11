@@ -2,7 +2,7 @@ import React from "react";
 import useAboutPage from "../Hooks/useAboutPage";
 
 import AboutPageBackground from "../Components/CustomBackgrounds/AboutPageBackground";
-import BrandLogo from "../assets/brand-logo.png";
+import BrandLogo from "../Components/BrandLogo/BrandLogo";
 import Navbar from "../Components/Navbar/Navbar";
 import GithubImage from "../assets/github.svg";
 import "./about-page.scss";
@@ -14,9 +14,7 @@ const AboutPage: React.FC = () => {
     <div className="about-page">
       <AboutPageBackground />
 
-      <a href="/" className="brand-logo _position-absolute">
-        <img src={BrandLogo} alt="wiki olympus logo" />
-      </a>
+      <BrandLogo />
 
       <Navbar links={navbarLinks} />
 

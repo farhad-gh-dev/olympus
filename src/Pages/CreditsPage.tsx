@@ -2,7 +2,7 @@ import React from "react";
 import useCreditsPage from "../Hooks/useCreditsPage";
 
 import CreditsPageBackground from "../Components/CustomBackgrounds/CredistPageBackground";
-import BrandLogo from "../assets/brand-logo.png";
+import BrandLogo from "../Components/BrandLogo/BrandLogo";
 import Navbar from "../Components/Navbar/Navbar";
 import CreditsDropDown from "../Components/CreditsDropDown/CreditsDropDown";
 import "./credits-page.scss";
@@ -20,9 +20,7 @@ const CreditsPage: React.FC = () => {
     <div className="credits-page">
       <CreditsPageBackground />
 
-      <a href="/" className="brand-logo _position-absolute">
-        <img src={BrandLogo} alt="wiki olympus logo" />
-      </a>
+      <BrandLogo />
 
       <Navbar links={navbarLinks} />
 

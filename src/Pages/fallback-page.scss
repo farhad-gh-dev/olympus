@@ -5,40 +5,6 @@
   width: 100vw;
   height: 100vh;
 
-  .brand-logo {
-    top: 25px;
-    left: $sides_spacing_mobile - 5px;
-    z-index: 100;
-
-    &:focus-visible {
-      img {
-        filter: drop-shadow(0px 20px 40px #ffffff);
-      }
-    }
-
-    @include sm-size {
-      top: 35px;
-      left: $sides_spacing_tablet;
-    }
-
-    @include lg-size {
-      top: 50px;
-      left: $sides_spacing_desktop - 5px;
-    }
-
-    img {
-      width: 65px;
-
-      @include sm-size {
-        width: 100px;
-      }
-
-      @include lg-size {
-        width: 135px;
-      }
-    }
-  }
-
   .page-content {
     flex-direction: column;
 
@@ -216,19 +182,6 @@
             font-size: 30px;
             color: #ccb37a;
             overflow: hidden;
-
-            // &::before {
-            //   content: "";
-            //   position: absolute;
-            //   top: 50%;
-            //   left: 115%;
-            //   transform: translateY(-50%) rotate(35deg);
-            //   width: 10%;
-            //   height: 130%;
-            //   background-color: rgba($index_page_accent_color, 0.3);
-            //   animation: redirect-btn 2.5s ease-in-out infinite;
-            //   z-index: -1;
-            // }
 
             @include sm-size {
               font-size: 45px;
