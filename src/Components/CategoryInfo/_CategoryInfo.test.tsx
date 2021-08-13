@@ -49,7 +49,7 @@ describe("category info", () => {
   });
 
   test("image src", () => {
-    const imageElement = screen.getByAltText("category image");
+    const imageElement = screen.getByAltText("category");
 
     expect(imageElement).toHaveAttribute("src", "imageDummySrc");
   });

@@ -3,12 +3,12 @@ import type { CategoryItem } from "../_CategoriesListTypes";
 import "./category.scss";
 
 interface Props {
-  categoryData: CategoryItem;
+  categoryData?: CategoryItem;
   categoryIcon?: string;
   subCategory?: boolean;
   disabled?: boolean;
   termToFilter?: string;
-  clickHandler?: (categoryName: CategoryItem) => void;
+  clickHandler?: (categoryName: CategoryItem | undefined) => void;
 }
 
 const Category: React.FC<Props> = ({
@@ -20,7 +20,10 @@ const Category: React.FC<Props> = ({
   clickHandler = () => console.log(`category clicked`),
 }) => {
   return (
-    <div className={`category${!subCategory ? "" : " sub-category"}`}>
+    <div
+      className={`category${!subCategory ? "" : " sub-category"}`}
+      data-testid="category-container"
+    >
       {categoryIcon ? (
         <div className="category-icon">
           <img src={categoryIcon} alt="category icon" />
@@ -31,10 +34,11 @@ const Category: React.FC<Props> = ({
           !disabled ? "" : " disabled"
         }`}
         onClick={() => clickHandler(categoryData)}
+        data-testid="category-btn"
       >
         {!termToFilter
-          ? categoryData.title
-          : categoryData.title.replaceAll(termToFilter, "")}
+          ? categoryData?.title
+          : categoryData?.title.replaceAll(termToFilter, "")}
       </button>
     </div>
   );

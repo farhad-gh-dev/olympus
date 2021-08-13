@@ -16,8 +16,9 @@ interface Props {
 const CategoriesList: React.FC<Props> = ({ categoriesData }) => {
   const dispatch = useDispatch();
 
-  const categoryClickHandler = (categoryName: CategoryItem) => {
-    dispatch(setActiveCategory(categoryName));
+  const categoryClickHandler = (categoryData: CategoryItem | undefined) => {
+    if (!categoryData) return;
+    dispatch(setActiveCategory(categoryData));
   };
 
   return (
