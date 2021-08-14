@@ -7,20 +7,23 @@ interface dropdownItem {
 }
 
 interface Props {
-  isActive: boolean;
+  isActive?: boolean;
   dropdownTitle?: string;
-  dropdownItems: dropdownItem[];
-  toggleHandler: (targetCategory: string) => void;
+  dropdownItems?: dropdownItem[] | undefined;
+  toggleHandler?: (targetCategory: string) => void;
 }
 
 const CreditsDropDown: React.FC<Props> = ({
   isActive = false,
   dropdownTitle = "dropdown",
   dropdownItems,
-  toggleHandler,
+  toggleHandler = () => {},
 }) => {
   return (
-    <div className={`credits-dropdown${isActive ? " active" : ""}`}>
+    <div
+      className={`credits-dropdown${isActive ? " active" : ""}`}
+      data-testid="dropdown-container"
+    >
       <div className="dropdown-container">
         <button
           className="dropdown-button _custom-button"
@@ -31,21 +34,26 @@ const CreditsDropDown: React.FC<Props> = ({
         </button>
         <div className="dropdown-items-container">
           <ul>
-            {dropdownItems.map((item) => {
-              return (
-                <li>
-                  <span className="dropdown-item-title">{item.itemTitle}:</span>
-                  <a
-                    href={item.itemLink.linkUrl}
-                    className="dropdown-item-link"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.itemLink.linkTitle}
-                  </a>
-                </li>
-              );
-            })}
+            {dropdownItems
+              ? dropdownItems.map((item) => {
+                  return (
+                    <li key={item.itemTitle}>
+                      <span className="dropdown-item-title">
+                        {item.itemTitle}:
+                      </span>
+                      <a
+                        href={item.itemLink.linkUrl}
+                        className="dropdown-item-link"
+                        target="_blank"
+                        rel="noreferrer"
+                        data-testid="dropdown-item-link"
+                      >
+                        {item.itemLink.linkTitle}
+                      </a>
+                    </li>
+                  );
+                })
+              : null}
           </ul>
         </div>
       </div>
