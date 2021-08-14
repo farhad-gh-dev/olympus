@@ -10,7 +10,7 @@ interface dropdownItem {
 interface Props {
   isActive?: boolean;
   dropdownTitle?: string;
-  dropdownItems?: dropdownItem[] | undefined;
+  dropdownItems?: dropdownItem[];
   toggleHandler?: (targetCategory: string) => void;
 }
 
