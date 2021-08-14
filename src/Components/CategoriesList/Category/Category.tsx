@@ -38,7 +38,7 @@ const Category: React.FC<Props> = ({
       >
         {!termToFilter
           ? categoryData?.title
-          : categoryData?.title.replaceAll(termToFilter, "")}
+          : categoryData?.title.replace(termToFilter, "")}
       </button>
     </div>
   );

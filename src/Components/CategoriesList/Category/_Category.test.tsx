@@ -6,18 +6,6 @@ test("component render test", () => {
   render(<Category />);
 });
 
-let dummyProps = {
-  categoryData: {
-    title: "cat title",
-    description: "",
-  },
-  categoryIcon: "cat icon",
-  subCategory: false,
-  disabled: false,
-  termToFilter: "",
-  clickHandler: (categoryName: any) => categoryName,
-};
-
 describe("category Props", () => {
   test("title", () => {
     render(<Category categoryData={{ title: "cat title", description: "" }} />);
@@ -45,5 +33,17 @@ describe("category Props", () => {
     const categoryButton = screen.getByTestId("category-btn");
 
     expect(categoryButton).toHaveClass("disabled");
+  });
+
+  test("filter terms", () => {
+    render(
+      <Category
+        categoryData={{ title: "cat title-filtered", description: "" }}
+        termToFilter={"-filtered"}
+      />
+    );
+    const titleElement = screen.getByText("cat title");
+
+    expect(titleElement).toBeInTheDocument();
   });
 });
