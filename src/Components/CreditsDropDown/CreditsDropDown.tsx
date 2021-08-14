@@ -1,4 +1,5 @@
 import React from "react";
+import DropDownItem from "./DropDownItem/DropDownItem";
 import "./credits-dropdown.scss";
 
 interface dropdownItem {
@@ -36,22 +37,7 @@ const CreditsDropDown: React.FC<Props> = ({
           <ul>
             {dropdownItems
               ? dropdownItems.map((item) => {
-                  return (
-                    <li key={item.itemTitle}>
-                      <span className="dropdown-item-title">
-                        {item.itemTitle}:
-                      </span>
-                      <a
-                        href={item.itemLink.linkUrl}
-                        className="dropdown-item-link"
-                        target="_blank"
-                        rel="noreferrer"
-                        data-testid="dropdown-item-link"
-                      >
-                        {item.itemLink.linkTitle}
-                      </a>
-                    </li>
-                  );
+                  return <DropDownItem {...item} />;
                 })
               : null}
           </ul>
