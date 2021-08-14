@@ -37,7 +37,7 @@ const CreditsDropDown: React.FC<Props> = ({
           <ul>
             {dropdownItems
               ? dropdownItems.map((item) => {
-                  return <DropDownItem {...item} />;
+                  return <DropDownItem key={item.itemTitle} {...item} />;
                 })
               : null}
           </ul>
