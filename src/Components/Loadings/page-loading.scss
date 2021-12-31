@@ -28,6 +28,13 @@
     }
   }
 
+  &.hide-loading-bar {
+    .image-container,
+    .loading-bar-container {
+      display: none;
+    }
+  }
+
   .image-container {
     position: relative;
     margin-bottom: 60px;
