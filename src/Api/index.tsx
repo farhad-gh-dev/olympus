@@ -3,7 +3,7 @@ import axios from "axios";
 const fetchQuotes = async () => {
   try {
     const { data } = await axios.get(
-      "https://applications-backend.herokuapp.com/olympus/quote"
+      "https://apiv10-production.up.railway.app/olympus/quote"
     );
     return [data, null];
   } catch (error) {
@@ -15,7 +15,7 @@ const fetchQuotes = async () => {
 const fetchGodsList = async () => {
   try {
     const { data } = await axios.get(
-      "https://applications-backend.herokuapp.com/olympus/gods"
+      "https://apiv10-production.up.railway.app/olympus/gods"
     );
     return [data, null];
   } catch (error) {
@@ -27,7 +27,7 @@ const fetchGodsList = async () => {
 const fetchGodInfo = async (godName = "zeus") => {
   try {
     const { data } = await axios.get(
-      `https://applications-backend.herokuapp.com/olympus/gods/${godName}`
+      `https://apiv10-production.up.railway.app/olympus/gods/${godName}`
     );
     return [data, null];
   } catch (error) {
